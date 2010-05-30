@@ -2,7 +2,7 @@
 
 require 'rubygems'
 require 'sinatra'
-require 'frankie'
+#require 'frankie'
 require 'aritbooker.rb'
 
 set :environment, :devlopment
