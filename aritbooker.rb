@@ -17,5 +17,5 @@ before do
 
 get '/' do
 #  "<h1>hello #{session['facebook_session'].user.name} and welcome to frankie</h1>"
-  <h1>hello</h1>
+  "<h1>hello</h1>"
 end
