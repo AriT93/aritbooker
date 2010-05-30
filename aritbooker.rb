@@ -1,3 +1,5 @@
+#!/usr/env/ruby
+
 require 'rubygems'
 require 'sinatra'
 require 'frankie'
