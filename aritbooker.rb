@@ -2,12 +2,12 @@
 
 require 'rubygems'
 require 'sinatra'
-require 'frankie'
+#require 'frankie'
 
 configure do
-  set :sessions, true
-  set :environment, :development
-  load_facebook_config "./config/facebooker.yml", Sinatra::Application.environment
+#  set :sessions, true
+#  set :environment, :development
+#  load_facebook_config "./config/facebooker.yml", Sinatra::Application.environment
 end
 
 before do
