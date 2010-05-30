@@ -1,13 +1,17 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+set :application, "aritbooker"
+set :repository,  "git@github.com:AriT93/aritbooker.git"
+set :deploy_to, "/home/aritbooker"
+set :user, "abturet"
+set :deploy_via, :remote_cache
+set :use_sudo, false
 
-set :scm, :subversion
+set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+role :web, "aritbooker.turetzky.org"                          # Your HTTP server, Apache/etc
+role :app, "aritbooker.turetzky.org"                          # This may be the same as your `Web` server
+role :db,  "aritbooker.turetzky.org", :primary => true # This is where Rails migrations will run
+role :db,  "aritbooker.turetzky.org"
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need

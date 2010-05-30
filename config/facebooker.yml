@@ -13,5 +13,3 @@ production:
   secret_key: c68e2cb86e9c7866633957ca96b09605
   conavas_page_name: 109529349074729
   callback_url: http://localhost:4567
-
-tunnel arit93booker.turetzky.org 15000 4567
