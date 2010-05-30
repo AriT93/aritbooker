@@ -1,0 +1,15 @@
+development:
+  api_key: 522baec079439455ab358362125a603f
+  secret_key: c68e2cb86e9c7866633957ca96b09605
+  conavas_page_name: 109529349074729
+  callback_url: http://localhost:4567
+test:
+  api_key: 522baec079439455ab358362125a603f
+  secret_key: c68e2cb86e9c7866633957ca96b09605
+  conavas_page_name: 109529349074729
+  callback_url: http://localhost:4567
+production:
+  api_key: 522baec079439455ab358362125a603f
+  secret_key: c68e2cb86e9c7866633957ca96b09605
+  conavas_page_name: 109529349074729
+  callback_url: http://localhost:4567
