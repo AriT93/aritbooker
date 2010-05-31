@@ -39,7 +39,7 @@ get '/' do
 end
 
 get '/status' do
-  "<p>#{session[:facebook_session].user.status}</p>"
+  "<p>#{session[:facebook_session].user.status.message}</p>"
 end
 
 post '/status' do
