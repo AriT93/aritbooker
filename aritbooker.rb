@@ -43,11 +43,11 @@ get '/' do
       status = a_friend.status
       if status_message(status)
         bstr += "<p>#{a_friend.name} says #{status_message(status)}</p>"
-      en
       else
         #bstr += "not here"
       # {status.instance_variable_get(:@message)}
-    end
+      end
+  end
     bstr
 #  rescue
 #    create_new_facebook_session_and_redirect!
