@@ -39,9 +39,9 @@ get '/' do
   #    end
       status = a_friend.status
       for field in Facebooker::User::Status::FIELDS.map(&:to_s).sort
-        bstr += "#{field} = #{status.send(field).to_s}<br/>"
+        bstr += "#{field}<br/>"
       end
-      bstr += "<p>#{a_friend.name} says #{a_friend.sex} and #{a_frind.status.message}</p>"
+      bstr += "<p>#{a_friend.name} says #{a_friend.sex} </p>"
     end
     bstr
   rescue
