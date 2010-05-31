@@ -23,6 +23,11 @@ post '/' do
     # haml :home
   get_users_as_fbml
 end
+
+get '/' do
+  get_users_as_fbml
+end
+
 def get_users_as_fbml
   bstr = ""
   for a_friend in session[:facebook_session].user.friends
