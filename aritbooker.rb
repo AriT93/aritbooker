@@ -24,7 +24,7 @@ helpers do
   def status_message(status)
     stat  = ""
     stat = status.instance_variable_get(:@message)
-    stat
+    stat.strip
   end
 end
 
