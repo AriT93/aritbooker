@@ -43,5 +43,5 @@ get '/status' do
 end
 
 post '/status' do
-  "<p>#{@fbuser.status}</p>"
+  "<p>#{@fbuser.status.message}</p>"
 end
