@@ -24,7 +24,8 @@ post '/' do
     # haml :home
   bstr = ""
   for a_friend in session[:facebook_session].user.friends
-    bstr += "<p><fb:name uid='#{Facebooker::User.cast_to_facebook_id a_friend}'></fb:name></p>"
+    uid = Facebooker::User.cast_to_facebook_id a_friend
+    bstr += "<p><fb:name uid='#{uid}'></fb:name> <fb:user-status uid='#{uid}'linked='true'/> </p>"
   end
   bstr
 end
@@ -33,7 +34,7 @@ get '/' do
   bstr = ""
   for a_friend in session[:facebook_session].user.friends
 #    bstr += "<p><fb:name uid='#{Facebooker::User.cast_to_facebook_id a_friend}'></fb:name></p>"
-    bstr += "<p>#{a_friend.name}</p>"
+    bstr += "<p>#{a_friend.name} says #{a_friend.status.message} </p>"
   end
   bstr
 end
@@ -43,5 +44,5 @@ get '/status' do
 end
 
 post '/status' do
-  "<p>#{session[:facebook_session].user.status.message}</p>"
+  "#{session[:facebook_session].user.status.message}"
 end
