@@ -22,5 +22,6 @@ namespace :deploy do
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    run "#{try_sudo} ln -s /home/aritbooker/facebooker.yml /home/aritbooker/current/config/facebooker.yml"
   end
 end
