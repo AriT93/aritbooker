@@ -43,5 +43,5 @@ get '/status' do
 end
 
 post '/status' do
-  "<p>#{@fbuser.status.message}</p>"
+  "<p>#{session[:facebook_session].user.status.message}</p>"
 end
