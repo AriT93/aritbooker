@@ -38,7 +38,8 @@ get '/' do
 #        bstr += "#{a_friend.send(status).to_s}<br/>"
   #    end
       status = a_friend.status
-      bstr += "<p>#{a_friend.name} says #{status.message} and is  #{a_friend.sex} </p>"
+      message = status.message
+      bstr += "<p>#{a_friend.name} says #{ message} : #{status[:message]} and is  #{a_friend.sex} </p>"
     end
     bstr
   rescue
