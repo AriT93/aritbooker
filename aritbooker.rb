@@ -16,6 +16,7 @@ end
 
 before do
   ensure_authenticated_to_facebook
+  @fbuser = session[:facebook_session].user
 #  ensure_application_is_installed_by_facebook_user
  end
 
@@ -36,3 +37,9 @@ get '/' do
   end
   bstr
 end
+
+get '/status' do
+  bstr = ""
+  for status in @fbuser.statuses
+    bstr = "<p>#{status.uid} said #{status.message}</p>"
+  end
