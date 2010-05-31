@@ -16,7 +16,7 @@ end
 
 before do
   ensure_authenticated_to_facebook
-  @FBuser = session[:facebook_session].user
+  @FBuser = session[:facebook_session]
 #  ensure_application_is_installed_by_facebook_user
  end
 
@@ -32,7 +32,7 @@ end
 
 get '/' do
   begin
-    bstr = "<h1>#{ @FBuser.name} says #{@FBuser.status}"
+    bstr = "<h1>#{session[:facebook_session].user.name} says #{session[:facebook_session].user.status}"
     friends =  session[:facebook_session].user.friends!(:name, :status)
     friends.each do |a_friend|
  #     for field in Facebooker::User::FIELDS.map(&:to_s).sort
