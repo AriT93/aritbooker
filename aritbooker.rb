@@ -49,7 +49,7 @@ end
 post '/status' do
   bstr =
   for status in @fbuser.statuses
-    bstr += "<p>#{status.message}</p>"
+    bstr += "<p>#{status}</p>"
   end
   bstr
 end
