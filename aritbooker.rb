@@ -19,5 +19,7 @@ get '/' do
 
 # haml :home
 "<h1>hello #{session[:facebook_session].user.name} welcome to frankie</h1> "
-
+  session[:facebook_session].user.friends.each do |a_friend|
+    "<p> #{a_friend}</p>"
+  end
 end
