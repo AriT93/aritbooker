@@ -16,8 +16,7 @@ end
 
 before do
   ensure_authenticated_to_facebook
-  @FBuser = session[:facebook_session]
-#  ensure_application_is_installed_by_facebook_user
+ #  ensure_application_is_installed_by_facebook_user
  end
 
 post '/' do
@@ -32,6 +31,7 @@ end
 
 get '/' do
   begin
+    @FBuser = session[:facebook_session]
     bstr = "<h1>#{session[:facebook_session].user.name} says #{session[:facebook_session].user.status.message} +++ #{FBuser.user.name}</h1>"
     friends =  session[:facebook_session].user.friends!(:name, :status)
     friends.each do |a_friend|
