@@ -12,7 +12,7 @@ end
 
 before do
   ensure_authenticated_to_facebook
-#  ensure_application_is_installed_by_facebook_user
+  ensure_application_is_installed_by_facebook_user
  end
 
 get '/' do
