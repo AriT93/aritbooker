@@ -21,8 +21,9 @@ get '/' do
     # haml :home
 #  "<h1>hello #{session[:facebook_session].user.name} welcome to frankie</h1><br/>
   a = 1
+  bstr = ""
   for a_friend in session[:facebook_session].user.friends
-    a += 1
+    bsr += "<p>", fb_name(a_friend), "</p>"
   end
-  "<p>#{a}</p>"
+  bstr
 end
