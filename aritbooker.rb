@@ -37,7 +37,8 @@ get '/' do
  #     for field in Facebooker::User::FIELDS.map(&:to_s).sort
 #        bstr += "#{a_friend.send(status).to_s}<br/>"
   #    end
-      status = a_friend.status.message
+      status = a_friend.status
+      bstr += status.message
       bstr += "<p>#{a_friend.name} says #{status.instance_variable_get(:@message)} </p>"
     end
     bstr
