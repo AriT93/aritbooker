@@ -4,6 +4,7 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'frankie'
+require 'facebooker'
 
 
 
