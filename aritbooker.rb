@@ -22,6 +22,6 @@ get '/' do
 #  "<h1>hello #{session[:facebook_session].user.name} welcome to frankie</h1><br/>
   for a_friend in session[:facebook_session].user.friends
     $a++
-    "<p> #{$a.to_string}</p>"
+    "<p> #{$a += 1}</p>"
   end
 end
