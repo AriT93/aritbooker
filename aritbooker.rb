@@ -41,10 +41,10 @@ get '/' do
     friends =  session[:facebook_session].user.friends!(:name, :status)
     friends.each do |a_friend|
       status = a_friend.status
-      if status_message(status)
+      if status_message(status).length > 0
         bstr += "<p>#{a_friend.name} says #{status_message(status).length}</p>"
       else
-        bstr += "<p>not here #{a_friend.name}</p>"
+#        bstr += "<p>not here #{a_friend.name}</p>"
       end
   end
     bstr
