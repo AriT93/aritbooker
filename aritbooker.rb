@@ -48,7 +48,7 @@ end
 
 post '/status' do
   bstr =
-  for status in session[:facebook_session].user.statuses(:limit =>2)
+  for status in session[:facebook_session].user.statuses(2)
     bstr += "<p>#{status.message}</p>"
   end
   bstr
