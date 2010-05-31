@@ -19,4 +19,3 @@ get '/' do
     # haml :home
   "<h1>hello #{session[:facebook_session].user.name} welcome to frankie</h1> "
 end
-end
