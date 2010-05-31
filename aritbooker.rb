@@ -24,7 +24,7 @@ get '/' do
   a = 1
   bstr = ""
   for a_friend in session[:facebook_session].user.friends
-    bsr += "<p>" +  fb_name(a_friend)  +  "</p>"
+    bsr += "<p>" +  cast_to_facebook_id  a_friend  +  "</p>"
   end
   bstr
 end
