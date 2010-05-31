@@ -38,7 +38,7 @@ get '/' do
     a_friend.status.each_key do |key|
       message += key
     end
-    bstr += "<p>#{a_friend.name} says #{message}</p>"
+    bstr += "<p>#{a_friend.name} says #{a_friend.status}</p>"
   end
   bstr
 end
