@@ -36,7 +36,7 @@ post '/' do
 end
 
 get '/' do
-#  begin
+  begin
     bstr = "<h1>#{session[:facebook_session].user.name} says #{session[:facebook_session].user.status.message}</h1>"
     friends =  session[:facebook_session].user.friends!(:name, :status)
     friends.each do |a_friend|
@@ -46,9 +46,9 @@ get '/' do
       end
   end
     bstr
-#  rescue
-#    create_new_facebook_session_and_redirect!
-#  end
+  rescue
+    create_new_facebook_session_and_redirect!
+  end
 end
 
 get '/status' do
