@@ -17,6 +17,6 @@ before do
 
 get '/' do
     # haml :home
-  "<h1>hello #{session[:facebook_session].user.name} welcome to frankie</h1>"
-  "<p> #{session[:facebook_session].user.friends}</p>"
+  "<h1>hello #{session[:facebook_session].user.name} welcome to frankie</h1><br/>
+  <p> #{session[:facebook_session].user.friends}</p>"
 end
