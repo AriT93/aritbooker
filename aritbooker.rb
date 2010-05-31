@@ -11,12 +11,12 @@ require 'facebooker'
 
 configure do
   set :sessions, true
-  @FBuser = session[:facebook_session].user
   load_facebook_config "./config/facebooker.yml", Sinatra::Application.environment
 end
 
 before do
   ensure_authenticated_to_facebook
+  @FBuser = session[:facebook_session].user
 #  ensure_application_is_installed_by_facebook_user
  end
 
