@@ -35,7 +35,7 @@ get '/' do
     friends =  session[:facebook_session].user.friends!(:name, :status, :religion, :sex)
     friends.each do |a_friend|
  #     for field in Facebooker::User::FIELDS.map(&:to_s).sort
-        bstr += "#{a_friend.send(status.message).to_s}<br/>"
+        bstr += "#{a_friend.send(status).to_s}<br/>"
   #    end
       bstr += "<p>#{a_friend.name} says #{a_friend.sex}</p>"
     end
