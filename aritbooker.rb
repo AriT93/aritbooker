@@ -18,6 +18,6 @@ before do
 
 get '/' do
 # haml :home
-  body "#{authlogic_facebook_login_button} <h1>hello #{session[:facebook_session].user.name} and welcome to frankie</h1>"
+  body " <h1>hello #{session[:facebook_session].user.name} and welcome to frankie</h1>"
 
 end
