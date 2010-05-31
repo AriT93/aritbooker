@@ -43,3 +43,4 @@ get '/status' do
   for status in @fbuser.statuses
     bstr = "<p>#{status.uid} said #{status.message}</p>"
   end
+end
