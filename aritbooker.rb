@@ -22,7 +22,7 @@ before do
 
 helpers do
   def status_message(status)
-    status.instance_variable_get(:@message).strip
+    status.instance_variable_get(:@message)
   end
 end
 
