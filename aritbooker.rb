@@ -39,17 +39,9 @@ get '/' do
 end
 
 get '/status' do
-  bstr = ""
-  for status in @fbuser.statuses(:limit => 2)
-    bstr += "<p>#{status.uid} said #{status.message}</p>"
-  end
-  bstr
+  "<p>#{session[:facebook_session].user.status}</p>"
 end
 
 post '/status' do
-  bstr =
-  for status in session[:facebook_session].user.statuses(2)
-    bstr += "<p>#{status.message}</p>"
-  end
-  bstr
+  "<p>#{@fbuser.status}</p>"
 end
