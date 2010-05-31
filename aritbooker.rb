@@ -22,7 +22,9 @@ before do
 
 helpers do
   def status_message(status)
-    status.instance_variable_get(:@message)
+    stat  = ""
+    stat = status.instance_variable_get(:@message)
+    stat
   end
 end
 
