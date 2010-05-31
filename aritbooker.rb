@@ -24,4 +24,5 @@ get '/' do
     session.delete
     set_facebook_session
     @current_facebook_session = facebook_session
+  end
 end
