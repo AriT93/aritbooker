@@ -16,8 +16,8 @@ before do
  end
 
 get '/' do
-  session.create
+
 # haml :home
-  body " <h1>hello #{session[:facebook_session].user.name} and welcome to frankie</h1>"
+  body "<h1>hello #{session[:facebook_session].user.name} and welcome to frankie</h1>"
 
 end
