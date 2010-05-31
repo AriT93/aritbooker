@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'sinatra'
+require 'haml'
 require 'frankie'
 
 configure do
@@ -17,5 +18,10 @@ before do
 
 get '/' do
 # haml :home
- body "<h1>hello #{session[:facebook_session].user.name} and welcome to frankie</h1>"
+  begin
+    body "<h1>hello #{session[:facebook_session].user.name} and welcome to frankie</h1>"
+  rescue
+    session.delete
+    set_facebook_session
+    @current_facebook_session = facebook_session
 end
