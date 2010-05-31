@@ -20,6 +20,9 @@ before do
  end
 
 helpers do
+  def status_message(status)
+    status.instance_variable_get(:@message).strip
+  end
 end
 
 post '/' do
@@ -38,7 +41,7 @@ get '/' do
     friends =  session[:facebook_session].user.friends!(:name, :status)
     friends.each do |a_friend|
       status = a_friend.status
-      bstr += "<p>#{a_friend.name} says #{status.instance_variable_get(:@message)}</p>"
+      bstr += "<p>#{a_friend.name} says #{status.instance_variable_get(:@message)} and #{status_message status}</p>"
       # {status.instance_variable_get(:@message)}
     end
     bstr
