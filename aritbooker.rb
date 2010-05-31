@@ -19,7 +19,7 @@ before do
 #  ensure_application_is_installed_by_facebook_user
  end
 
-get '/' do
+post '/' do
     # haml :home
 #  "<h1>hello #{session[:facebook_session].user.name} welcome to frankie</h1><br/>
   a = 1
