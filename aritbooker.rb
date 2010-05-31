@@ -42,7 +42,7 @@ get '/' do
     friends.each do |a_friend|
       status = a_friend.status
       if status_message(status)
-        bstr += "<p>#{a_friend.name} says #{status_message status}</p>"
+        bstr += "<p>#{a_friend.name} says #{status_message(status)}</p>"
       end
       # {status.instance_variable_get(:@message)}
     end
