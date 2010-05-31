@@ -15,7 +15,8 @@ configure do
 end
 
 before do
-#  ensure_authenticated_to_facebook
+  ensure_authenticated_to_facebook
+#  ensure_application_is_installed_by_facebook_user
  end
 
 post '/' do
@@ -29,12 +30,17 @@ post '/' do
 end
 
 get '/' do
-  bstr = ""
-  friends =  session[:facebook_session].user.friends!(:name, :status)
-  friends.each do |a_friend|
-    bstr += "<p>#{a_friend.name} says #{a_friend.status}</p>"
+  begin
+    bstr = ""
+    friends =  session[:facebook_session].user.friends!(:name, :status)
+    friends.each do |a_friend|
+      bstr += "<p>#{a_friend.name} says #{a_friend.status}</p>"
+    end
+
+    bstr
+  rescue
+    create_new_facebook_session_and_redirect!
   end
-  bstr
 end
 
 get '/status' do
