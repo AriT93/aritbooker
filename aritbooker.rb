@@ -6,7 +6,7 @@ require 'haml'
 require 'frankie'
 
 configure do
-  set :sessions, false
+  set :sessions, true
   load_facebook_config "./config/facebooker.yml", Sinatra::Application.environment
 end
 
