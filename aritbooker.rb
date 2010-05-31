@@ -38,7 +38,6 @@ get '/' do
 #        bstr += "#{a_friend.send(status).to_s}<br/>"
   #    end
       status = a_friend.Status
-      end
       bstr += "<p>#{a_friend.name} says #{status} and is  #{a_friend.sex} </p>"
     end
     bstr
