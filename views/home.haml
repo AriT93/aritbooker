@@ -3,4 +3,4 @@
 %fb:tabs
 - :session[:facebook_session].user.friends.each do |a_friend|
   %p
-    -fb_name #{a_friend}
+    = #{a_friend}
