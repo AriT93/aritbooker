@@ -18,6 +18,6 @@ before do
 get '/' do
 
 # haml :home
-  body "<h1>hello welcome to frankie</h1>"
+  body "<h1>hello #{:facebook_session.user.name} welcome to frankie</h1>"
 
 end
