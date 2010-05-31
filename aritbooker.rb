@@ -41,6 +41,15 @@ end
 get '/status' do
   bstr = ""
   for status in @fbuser.statuses
-    bstr = "<p>#{status.uid} said #{status.message}</p>"
+    bstr += "<p>#{status.uid} said #{status.message}</p>"
   end
+  bstr
+end
+
+post '/status' do
+  bstr =
+  for status in @fbuser.statuses
+    bstr += "<p>#{status.message}</p>"
+  end
+  bstr
 end
