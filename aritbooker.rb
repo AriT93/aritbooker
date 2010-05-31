@@ -40,7 +40,7 @@ end
 
 get '/status' do
   bstr = ""
-  for status in @fbuser.statuses 2
+  for status in @fbuser.statuses(:limit => 2)
     bstr += "<p>#{status.uid} said #{status.message}</p>"
   end
   bstr
@@ -48,7 +48,7 @@ end
 
 post '/status' do
   bstr =
-  for status in session[:facebook_session].user.statuses 2
+  for status in session[:facebook_session].user.statuses(:limit =>2)
     bstr += "<p>#{status.message}</p>"
   end
   bstr
