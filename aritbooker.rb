@@ -44,8 +44,7 @@ get '/' do
       if status_message(status)
         bstr += "<p>#{a_friend.name} says #{status_message(status)}</p>"
       else
-        #bstr += "not here"
-      # {status.instance_variable_get(:@message)}
+        bstr += "not here"
       end
   end
     bstr
