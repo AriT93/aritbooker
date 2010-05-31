@@ -16,5 +16,6 @@ before do
  end
 
 get '/' do
-body  "<h1>hello #{session[:facebook_session].user.name} and welcome to frankie</h1>"
+body  "<fb:dashboard><fb:header decoration\"add_border\" icon=\"false\">AriBooker</fb:header></fb:dashboard>
+        <h1>hello #{session[:facebook_session].user.name} and welcome to frankie</h1>"
 end
