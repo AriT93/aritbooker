@@ -32,13 +32,13 @@ end
 get '/' do
   begin
     bstr = ""
-    friends =  session[:facebook_session].user.friends!(:name, :status, :religion, :sex)
+    friends =  session[:facebook_session].user.friends!(:name, :status)
     friends.each do |a_friend|
  #     for field in Facebooker::User::FIELDS.map(&:to_s).sort
 #        bstr += "#{a_friend.send(status).to_s}<br/>"
   #    end
       status = a_friend.status
-      bstr += "<p>#{a_friend.name} says #{status.instance_variable_get(:@message)} :  and is  #{a_friend.sex} </p>"
+      bstr += "<p>#{a_friend.name} says #{status.instance_variable_get(:@message)} </p>"
     end
     bstr
   rescue
