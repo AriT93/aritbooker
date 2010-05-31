@@ -34,7 +34,7 @@ get '/' do
   bstr = ""
   friends =  session[:facebook_session].user.friends!(:name, :status)
   friends.each do |a_friend|
-    bstr += "<p>#{a_friend.name} says something</p>"
+    bstr += "<p>#{a_friend.name} says #{a_friend.stats.from_hash(message)}</p>"
   end
   bstr
 end
