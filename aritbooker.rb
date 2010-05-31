@@ -16,6 +16,7 @@ end
 
 before do
   ensure_authenticated_to_facebook
+  session[:facebook_session].create
 #  ensure_application_is_installed_by_facebook_user
  end
 
