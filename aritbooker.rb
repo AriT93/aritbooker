@@ -38,7 +38,7 @@ get '/' do
 #        bstr += "#{a_friend.send(status).to_s}<br/>"
   #    end
       status = a_friend.status
-      bstr += "#{Facebooker::User.method_defined?(:message)}<br/>"
+      bstr += "#{status.[message]}<br/>"
       bstr += "<p>#{a_friend.name} says #{status.instance_variable_get(:@message)} </p>"
     end
     bstr
