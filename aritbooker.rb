@@ -44,7 +44,7 @@ get '/' do
       if status_message(status)
         bstr += "<p>#{a_friend.name} says #{status_message(status)}</p>"
       else
-        bstr += "not here"
+        bstr += "not here #{a_frind.name}"
       end
   end
     bstr
