@@ -32,7 +32,7 @@ end
 
 get '/' do
   begin
-    bstr = "<h1>#{session[:facebook_session].user.name} says #{session[:facebook_session].user.status.message}</h1>"
+    bstr = "<h1>#{session[:facebook_session].user.name} says #{session[:facebook_session].user.status.message} +++ #{FBuser.user.name}</h1>"
     friends =  session[:facebook_session].user.friends!(:name, :status)
     friends.each do |a_friend|
  #     for field in Facebooker::User::FIELDS.map(&:to_s).sort
