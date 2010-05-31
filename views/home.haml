@@ -1,6 +1,6 @@
 %fb:dashboard
   %fb:header{:decoration =>'add_border', :icon =>'false'}AriTBooker
 %fb:tabs
-- @facebook_session.user.friends.each do |a_friend|
+- :session[:facebook_session].user.friends.each do |a_friend|
   %p
     -fb_name #{a_friend}
