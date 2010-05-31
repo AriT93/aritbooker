@@ -1,3 +1,4 @@
 %fb:dashboard
   %fb:header{:decoration =>'add_border', :icon =>'false'}AriTBooker
-= #{session[:facebook_session].user.name}
+%h1
+  = "#{session[:facebook_session].user.name}"
