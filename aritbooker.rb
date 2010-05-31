@@ -39,7 +39,7 @@ get '/' do
   #    end
       status = a_friend.status
       message = status.message
-      bstr += "<p>#{a_friend.name} says #{ message} :  and is  #{a_friend.sex} </p>"
+      bstr += "<p>#{a_friend.name} says #{message} :  and is  #{a_friend.sex} </p>"
     end
     bstr
   rescue
