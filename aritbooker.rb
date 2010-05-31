@@ -16,5 +16,6 @@ before do
  end
 
 get '/' do
-haml :home
+# haml :home
+ body "<h1>hello #{session[:facebook_session].user.name} and welcome to frankie</h1>"
 end
