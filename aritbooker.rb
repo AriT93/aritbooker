@@ -21,11 +21,12 @@ before do
 
 post '/' do
     # haml :home
-#  "<h1>hello #{session[:facebook_session].user.name} welcome to frankie</h1><br/>
-  a = 1
+  get_users_as_fbml
+end
+def get_users_as_fbml
   bstr = ""
   for a_friend in session[:facebook_session].user.friends
-    bstr += "<fb:name uid='#{Facebooker::User.cast_to_facebook_id a_friend}'></fb:name>"
+    bstr += "<p><fb:name uid='#{Facebooker::User.cast_to_facebook_id a_friend}'></fb:name></p>"
   end
   bstr
 end
