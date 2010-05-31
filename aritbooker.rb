@@ -5,7 +5,7 @@ require 'sinatra'
 require 'haml'
 require 'frankie'
 
-$a = 1
+
 
 configure do
   set :sessions, true
@@ -20,7 +20,9 @@ before do
 get '/' do
     # haml :home
 #  "<h1>hello #{session[:facebook_session].user.name} welcome to frankie</h1><br/>
+  a = 1
   for a_friend in session[:facebook_session].user.friends
-    "<p> #{$a += 1}</p>"
+    a += 1
   end
+  "<p>#{a}</p>"
 end
