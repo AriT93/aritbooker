@@ -32,7 +32,7 @@ def get_users_as_fbml
   bstr = ""
   for a_friend in session[:facebook_session].user.friends
 #    bstr += "<p><fb:name uid='#{Facebooker::User.cast_to_facebook_id a_friend}'></fb:name></p>"
-    bstr += "<p>a_friend.name</p>"
+    bstr += "<p>#{a_friend.name}</p>"
   end
   bstr
 end
