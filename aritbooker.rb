@@ -32,9 +32,9 @@ end
 
 get '/' do
   bstr = ""
-  for a_friend in session[:facebook_session].user.friends
-#    bstr += "<p><fb:name uid='#{Facebooker::User.cast_to_facebook_id a_friend}'></fb:name></p>"
-    bstr += "<p>#{a_friend.name} says #{a_friend.status} </p>"
+  friends =  session[:facebook_session].user.friends!(:name, :status)
+  friends.each do |a_friend|
+    bstr += "<p>#{a_friend.name} says #{a_friend.status.message} </p>"
   end
   bstr
 end
