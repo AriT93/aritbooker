@@ -16,7 +16,6 @@ end
 
 before do
   ensure_authenticated_to_facebook
-  session[:facebook_session].create
 #  ensure_application_is_installed_by_facebook_user
  end
 
@@ -34,10 +33,6 @@ get '/' do
   bstr = ""
   friends =  session[:facebook_session].user.friends!(:name, :status)
   friends.each do |a_friend|
-    message = ""
-    a_friend.status.keys do |key|
-      message += key
-    end
     bstr += "<p>#{a_friend.name} says #{a_friend.status}</p>"
   end
   bstr
