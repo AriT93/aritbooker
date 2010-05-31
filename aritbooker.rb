@@ -11,6 +11,7 @@ require 'facebooker'
 
 configure do
   set :sessions, true
+  @FBuser = session[:facebook_session].user
   load_facebook_config "./config/facebooker.yml", Sinatra::Application.environment
 end
 
@@ -31,7 +32,7 @@ end
 
 get '/' do
   begin
-    bstr = ""
+    bstr = "<h1>#{ @FBuser.name} says #{@FBuser.status}"
     friends =  session[:facebook_session].user.friends!(:name, :status)
     friends.each do |a_friend|
  #     for field in Facebooker::User::FIELDS.map(&:to_s).sort
