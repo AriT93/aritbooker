@@ -20,6 +20,12 @@ before do
  #  ensure_application_is_installed_by_facebook_user
  end
 
+helpers do
+  def status_message(status)
+    status.instance_variable_get(message)
+  end
+end
+
 post '/' do
     # haml :home
   bstr = ""
@@ -35,11 +41,9 @@ get '/' do
     bstr = "<h1>#{session[:facebook_session].user.name} says #{session[:facebook_session].user.status.message} +++ #{@fbuser.name}</h1>"
     friends =  session[:facebook_session].user.friends!(:name, :status)
     friends.each do |a_friend|
- #     for field in Facebooker::User::FIELDS.map(&:to_s).sort
-#        bstr += "#{a_friend.send(status).to_s}<br/>"
-  #    end
       status = a_friend.status
-      bstr += "<p>#{a_friend.name} says #{status.instance_variable_get(:@message)} </p>"
+      bstr += "<p>#{a_friend.name} says #{status_message status}</p>"
+      # {status.instance_variable_get(:@message)}
     end
     bstr
   rescue
