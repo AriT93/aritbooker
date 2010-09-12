@@ -19,6 +19,10 @@ use Rack::Flash
 set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/"
 
 
+error do
+ request.env['sinatra.error']
+end
+
 helpers do
   def status_message(status)
     status.instance_variable_get(:@message)
@@ -39,11 +43,6 @@ before do
   @user = nil
 end
 
-error do
-  e == request.env['sinatra.error']
-  Kernel.puts e.backtrace.join("\n")
-  'Application error'
-end
 
 
 get '/' do
@@ -62,6 +61,13 @@ get '/' do
     @oauth_url = MiniFB.ouath_url(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",:scope=>MiniFB.scopes.join(","))
     haml :index
   end
+end
+
+get '/sessions/create' do
+  access_token_hash = MiniFB.oauth_access_token(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",@@yaml["secret_keyh"], params[:code])
+  @access_token = access_token_hash["access_token"]
+  env[:access_token] = @access_token
+  @access_token
 end
 
 
