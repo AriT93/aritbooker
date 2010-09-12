@@ -44,53 +44,56 @@ before do
 end
 
 get '/' do
-  redirect '/login' unless logged_in?
-  if !current_user.email
-    current_user.destroy!
-    flash[:notice] = "You need to login or create an account first then link it to your Facebook accout"
-    session[:user] =nil
-    redirect '/login'
-  else
-    @user = HdUser.first(:email => current_user.email)
-    if @user == nil
-      @user = HdUser.first(:email => current_user.email)
-      @user.save
-    end
-    @oauth_url = MiniFB.ouath_url(@@yaml["app_id"],"htp://aritbooker.turetzky.org/sessions/create",:scope=>MiniFB.scopes.join(","))
-    haml :index
-  end
+  "hello world"
 end
+"
+#   redirect '/login' unless logged_in?
+#   if !current_user.email
+#     current_user.destroy!
+#     flash[:notice] = "You need to login or create an account first then link it to your Facebook accout"
+#     session[:user] =nil
+#     redirect '/login'
+#   else
+#     @user = HdUser.first(:email => current_user.email)
+#     if @user == nil
+#       @user = HdUser.first(:email => current_user.email)
+#       @user.save
+#     end
+#     @oauth_url = MiniFB.ouath_url(@@yaml["app_id"],"htp://aritbooker.turetzky.org/sessions/create",:scope=>MiniFB.scopes.join(","))
+#     haml :index
+#   end
+# end
 
-get '/sessions/create' do
-  access_token_hash = MiniFB.oauth_access_token(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",@@yaml["secret_keyh"], params[:code])
-  @access_token = access_token_hash["access_token"]
-  env[:access_token] = @access_token
-  @access_token
-end
+# get '/sessions/create' do
+#   access_token_hash = MiniFB.oauth_access_token(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",@@yaml["secret_keyh"], params[:code])
+#   @access_token = access_token_hash["access_token"]
+#   env[:access_token] = @access_token
+#   @access_token
+# end
 
 
-get '/css/style.css' do
-  content_type 'text/css'
-  sass :style
-end
+# get '/css/style.css' do
+#   content_type 'text/css'
+#   sass :style
+# end
 
-get '/login' do
-  haml :login
-end
+# get '/login' do
+#   haml :login
+# end
 
-get '/signup' do
-  haml :signup
-end
+# get '/signup' do
+#   haml :signup
+# end
 
-get '/logout' do
-  haml "= render_login_logout"
-end
+# get '/logout' do
+#   haml "= render_login_logout"
+# end
 
-get '/canvas/' do
-  if fb[:user]
-    @email = DmUser.first(:fb_uid => fb[:user].to_s)
-    @user = HdUser.first(:email => @email.email)
-  end
+# get '/canvas/' do
+#   if fb[:user]
+#     @email = DmUser.first(:fb_uid => fb[:user].to_s)
+#     @user = HdUser.first(:email => @email.email)
+#   end
 
-  haml :fbook2, :layout => false
-end
+#   haml :fbook2, :layout => false
+# end
