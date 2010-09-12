@@ -46,7 +46,7 @@ end
 get '/' do
   "hello world"
 end
-"
+
 #   redirect '/login' unless logged_in?
 #   if !current_user.email
 #     current_user.destroy!
