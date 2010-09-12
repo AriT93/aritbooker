@@ -20,7 +20,7 @@ set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + 
 
 
 error do
- request.env['sinatra.error']
+ e = request.env['sinatra.error']
 end
 
 helpers do
@@ -43,8 +43,6 @@ before do
   @user = nil
 end
 
-
-
 get '/' do
   redirect '/login' unless logged_in?
   if !current_user.email
@@ -58,7 +56,7 @@ get '/' do
       @user = HdUser.first(:email => current_user.email)
       @user.save
     end
-    @oauth_url = MiniFB.ouath_url(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",:scope=>MiniFB.scopes.join(","))
+    @oauth_url = MiniFB.ouath_url(@@yaml["app_id"],"htp://aritbooker.turetzky.org/sessions/create",:scope=>MiniFB.scopes.join(","))
     haml :index
   end
 end
