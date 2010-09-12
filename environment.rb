@@ -7,6 +7,7 @@ require 'digest/sha1'
 require 'dm-migrations'
 require 'haml'
 require 'ostruct'
+
 require 'sinbook'
 require 'sinatra' unless defined?(Sinatra)
 require 'sinatra-authentication'

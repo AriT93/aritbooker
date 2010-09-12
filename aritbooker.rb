@@ -16,7 +16,6 @@ use Rack::Session::Cookie, :secret=>"supahsekrit is the bestes sekrit"
 use Rack::Flash
 
 
-
 set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/"
 
 
