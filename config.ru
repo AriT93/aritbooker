@@ -5,6 +5,5 @@ require 'sinatra'
 require 'haml'
 require 'aritbooker.rb'
 
-set :environment, :devlopment
 
 run Sinatra::Application
