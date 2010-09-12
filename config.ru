@@ -2,7 +2,6 @@
 
 require 'rubygems'
 require 'sinatra'
-require 'frankie'
 require 'haml'
 require 'aritbooker.rb'
 

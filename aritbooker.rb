@@ -1,60 +1,87 @@
 #!/usr/env/ruby
 
-require 'rubygems'
+require "rubygems"
+require 'environment'
+require 'sinbook'
 require 'sinatra'
+require 'dm-core'
+require 'digest/sha1'
+require 'sinatra-authentication'
 require 'haml'
-require 'frankie'
-require 'facebooker'
+require 'sass'
+require 'rack-flash'
+require 'pp'
+require 'mini_fb'
+use Rack::Session::Cookie, :secret=>"supahsekrit is the bestes sekrit"
+use Rack::Flash
 
 
 
+set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/"
 
-configure do
-  set :sessions, true
-  load_facebook_config "./config/facebooker.yml", Sinatra::Application.environment
-end
-
-before do
-  ensure_authenticated_to_facebook
- #  ensure_application_is_installed_by_facebook_user
- end
 
 helpers do
   def status_message(status)
     status.instance_variable_get(:@message)
   end
+    #define helpers here
+  def partial(name, options={})
+    haml("_#{name.to_s}".to_sym, options.merge(:layout => false))
+  end
+  def fb2hd
+    if fb[:user]
+      @email = DmUser.first(:fb_uid => fb[:user].to_s)
+      @user = HdUser.first(:email => @email.email)
+    end
+  end
 end
 
-post '/' do
-    # haml :home
-  bstr = ""
-  for a_friend in session[:facebook_session].user.friends
-    uid = Facebooker::User.cast_to_facebook_id a_friend
-    bstr += "<p><fb:name uid='#{uid}'></fb:name> <fb:user-status uid='#{uid}'linked='true'/> </p>"
-  end
-  bstr
+before do
+  @user = nil
 end
+
 
 get '/' do
-  begin
-    bstr = "<h1>#{session[:facebook_session].user.name} says #{session[:facebook_session].user.status.message}</h1>"
-    friends =  session[:facebook_session].user.friends!(:name, :status)
-    friends.each do |a_friend|
-      status = a_friend.status
-      if status_message(status).to_s.length > 0
-        bstr += "<p>#{a_friend.name} says #{status_message(status)}</p>"
-      end
-  end
-    bstr
-  rescue
-    create_new_facebook_session_and_redirect!
+#  redirect '/login' unless logged_in?
+  if !current_user.email
+    current_user.destroy!
+    flash[:notice] = "You need to login or create an account first then link it to your Facebook accout"
+    session[:user] =nil
+ #   redirect '/login'
+  else
+    @user = HdUser.first(:email => current_user.email)
+    if @user == nil
+      @user = HdUser.first(:email => current_user.email)
+      @user.save
+    end
+    @oauth_url = MiniFB.ouath_url(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",:scope=>MiniFB.scopes.join(","))
+    haml :index
   end
 end
 
-get '/status' do
-  "<p>#{session[:facebook_session].user.status.message}</p>"
+
+get '/css/style.css' do
+  content_type 'text/css'
+  sass :style
 end
 
-post '/status' do
-  "#{session[:facebook_session].user.status.message}"
+get '/login' do
+  haml :login
+end
+
+get '/signup' do
+  haml :signup
+end
+
+get '/logout' do
+  haml "= render_login_logout"
+end
+
+get '/canvas/' do
+  if fb[:user]
+    @email = DmUser.first(:fb_uid => fb[:user].to_s)
+    @user = HdUser.first(:email => @email.email)
+  end
+
+  haml :fbook2, :layout => false
 end
