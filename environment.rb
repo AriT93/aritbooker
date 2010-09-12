@@ -16,7 +16,7 @@ configure do
   SiteConfig = OpenStruct.new(
                  :title => 'aritbooker',
                  :author => 'Ari Turetzky',
-                 :url_base => 'http://localhost:4567/'
+                 :url_base => 'http://aritbooker.turetzky.org/'
                )
 
   # load models

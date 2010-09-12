@@ -39,14 +39,20 @@ before do
   @user = nil
 end
 
+error do
+  e == request.env['sinatra.error']
+  Kernel.puts e.backtrace.join("\n")
+  'Application error'
+end
+
 
 get '/' do
-#  redirect '/login' unless logged_in?
+  redirect '/login' unless logged_in?
   if !current_user.email
     current_user.destroy!
     flash[:notice] = "You need to login or create an account first then link it to your Facebook accout"
     session[:user] =nil
- #   redirect '/login'
+    redirect '/login'
   else
     @user = HdUser.first(:email => current_user.email)
     if @user == nil
