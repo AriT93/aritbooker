@@ -56,7 +56,7 @@ get '/' do
       @user = HdUser.new(:email => current_user.email)
       @user.save
     end
-    @oauth_url = MiniFB.ouath_url(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",:scope=>MiniFB.scopes.join(","))
+    @oauth_url = MiniFB.oauth_url(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",:scope=>MiniFB.scopes.join(","))
     haml :index
   end
 end
