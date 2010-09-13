@@ -1,4 +1,19 @@
 require 'spec/rake/spectask'
+require 'rubygems'
+require 'dm-core'
+require 'dm-timestamps'
+require 'dm-validations'
+require 'dm-aggregates'
+require 'digest/sha1'
+require 'dm-migrations'
+require 'haml'
+require 'ostruct'
+require 'sinbook'
+require 'sinatra' unless defined?(Sinatra)
+require 'environment.rb'
+require 'sinatra-authentication'
+require 'aritbooker.rb'
+
 
 task :default => :test
 task :test => :spec
@@ -35,5 +50,10 @@ namespace :gems do
 end
 
 task :environment do
+  require 'aritbooker'
+  require 'sinatra-authentication'
+  require 'sinbook'
+  require 'sinatra'
+  require 'mpatch'
   require 'environment'
 end
