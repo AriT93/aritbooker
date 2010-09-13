@@ -53,7 +53,7 @@ get '/' do
   else
     @user = HdUser.first(:email => current_user.email)
     if @user == nil
-      @user = HdUser.first(:email => current_user.email)
+      @user = HdUser.new(:email => current_user.email)
       @user.save
     end
     @oauth_url = MiniFB.ouath_url(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",:scope=>MiniFB.scopes.join(","))
