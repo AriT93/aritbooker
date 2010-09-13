@@ -34,7 +34,7 @@ helpers do
   def fb2hd
     if fb[:user]
       @email = DmUser.first(:fb_uid => fb[:user].to_s)
-      @user = HdUser.first(:email => @email.email)
+      @user = AbUser.first(:email => @email.email)
     end
   end
 end
@@ -51,12 +51,14 @@ get '/' do
     session[:user] =nil
     redirect '/login'
   else
-    @user = HdUser.first(:email => current_user.email)
+    @user = AbUser.first(:email => current_user.email)
     if @user == nil
-      @user = HdUser.new(:email => current_user.email)
+      @user = AbUser.new(:email => current_user.email)
       @user.save
     end
     @oauth_url = MiniFB.oauth_url(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",:scope=>MiniFB.scopes.join(","))
+    @user.atoken = env[:access_token]
+    @user.save
     haml :index
   end
 end
@@ -89,7 +91,7 @@ end
 get '/canvas/' do
   if fb[:user]
     @email = DmUser.first(:fb_uid => fb[:user].to_s)
-    @user = HdUser.first(:email => @email.email)
+    @user = AbUser.first(:email => @email.email)
   end
 
   haml :fbook2, :layout => false
