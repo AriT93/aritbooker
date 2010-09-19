@@ -60,7 +60,7 @@ get '/' do
     @user.atoken = env[:access_token]
     @user.save
   end
-  @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
+  @fbs = MiniFB::OAuthSession.new(env[:atoken],"en_US")
   haml :index
 end
 
