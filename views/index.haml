@@ -4,6 +4,9 @@
   - env.each do |wibble|
     %p #{wibble.to_s}
 
+  - @user.each do |wibbler|
+    %p #{wibbler.to_s}
+
 %p access token is
 %p
-  - @@access_token
+  - @access_token
