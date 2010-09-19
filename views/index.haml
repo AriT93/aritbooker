@@ -1,5 +1,5 @@
 %p
   = @user.email
   = @user.atoken
-  = env.to_s
-  = env[:access_token].to_s
+  - env.each do |wibble|
+    %p #{wibble.to_s}
