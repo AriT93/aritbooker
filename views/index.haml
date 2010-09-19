@@ -1,4 +1,4 @@
 %p
   = @user.email
   = @user.atoken
-  = env[:access_token]
+  = env[:access_token].to_s
