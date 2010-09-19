@@ -70,7 +70,7 @@ get '/sessions/create' do
   @@access_token = @access_token_hash["access_token"]
   @user = AbUser.first(:id => 1)
   @user.atoken = @@access_token
-  @user.atokenhash = @@access_token_hash
+  @user.atokenhash = "test"
   @user.save
   env[:access_token] = @@access_token
 end
