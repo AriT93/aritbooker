@@ -41,6 +41,7 @@ end
 
 before do
   @user = nil
+  @@access_token = ""
 end
 
 get '/' do
