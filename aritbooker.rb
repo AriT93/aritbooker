@@ -59,9 +59,9 @@ get '/' do
     @oauth_url = MiniFB.oauth_url(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",:scope=>MiniFB.scopes.join(","))
     @user.atoken = env[:access_token]
     @user.save
+    @fbs = MiniFB::OAuthSession.new(env[:atoken],"en_US")
+    haml :index
   end
-  @fbs = MiniFB::OAuthSession.new(env[:atoken],"en_US")
-  haml :index
 end
 
 get '/sessions/create' do
