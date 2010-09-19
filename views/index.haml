@@ -1,11 +1,6 @@
 %p
   = @user.email
   = @user.atoken
-  - env.each do |wibble|
-    %p #{wibble.to_s}
-
-  - @user.each do |wibbler|
-    %p #{wibbler.to_s}
 
 %p access token is
 %p
