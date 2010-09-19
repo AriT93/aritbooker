@@ -58,23 +58,22 @@ get '/' do
       @user.save
     end
     @oauth_url = MiniFB.oauth_url(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",:scope=>MiniFB.scopes.join(","))
-    @user.atoken = env[:access_token]
+    @user.atoken = @@access_token
     @user.save
-    @fbs = MiniFB::OAuthSession.new(env[:atoken],"en_US")
+    @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
     haml :index
   end
 end
 
 get '/sessions/create' do
   @access_token_hash = MiniFB.oauth_access_token(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",@@yaml["secret_key"], params[:code])
-  @access_token = @access_token_hash["access_token"]
+  @@access_token = @access_token_hash["access_token"]
   @user = AbUser.first(:email => current_user.email)
-  @user.atoken = @access_token
-  @user.atokenhash = @access_token_hash
+  @user.atoken = @@access_token
+  @user.atokenhash = @@access_token_hash
   @user.save
-  cookies[:access_token] = @access_token
-  env[:access_token] = @access_token
-  @access_token
+  cookies[:access_token] = @@access_token
+  env[:access_token] = @@access_token
 end
 
 
