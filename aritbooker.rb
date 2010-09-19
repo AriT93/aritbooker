@@ -60,9 +60,7 @@ get '/' do
     @user.atoken = env[:access_token]
     @user.save
   end
-  @fbsession = MiniFB::OAuthSession.new(@access_token)
-  @fbs = MiniFB::Session.new(@@yaml["api_key"],@@yaml["secret_key"], @fbsession , fb[:user].to_s)
-  @response = @fbs.call("stream.get")
+  @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
   haml :index
 end
 
