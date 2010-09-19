@@ -72,7 +72,6 @@ get '/sessions/create' do
   @user.atoken = @@access_token
   @user.atokenhash = @@access_token_hash
   @user.save
-  cookies[:access_token] = @@access_token
   env[:access_token] = @@access_token
 end
 
