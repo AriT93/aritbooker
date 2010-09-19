@@ -2,7 +2,7 @@ set :application, "aritbooker"
 set :repository,  "git@github.com:AriT93/aritbooker.git"
 set :deploy_to, "/home/aritbooker/"
 set :user, "abturet"
-#set :deploy_via, :remote_cache
+set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, :git
