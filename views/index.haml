@@ -15,7 +15,12 @@
             #comment
             - h.comments.data.each do |com|
               %p{:class => "#{j.even?}" + "_l"}
-                "#{com.from.name} : #{com.message}"
+                - if fb[:user]
+                  %fb:profile-pic{:uid => "#{com.from.id}", :height => "25px", :width => "25px"}
+                  %fb:name{:uid => "#{h.from.id}", :useyou => 'false'}
+                - else
+                  #{com.from.name}
+                #{com.message}
               - j = j+1
         %a{:href => "#{h.actions[0].link}"}
           #{h.actions[0].name}
