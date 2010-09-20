@@ -7,7 +7,7 @@
         %p{:class => "#{i.even?}" + "_r"} #{h.message}
         - if h.comments != nil
           - if h.comments.data != nil
-            - j = 0
+            - j = 1
             #comment
             - h.comments.data.each do |com|
               %p{:class => "#{j.even?}" + "_l"}
@@ -20,6 +20,5 @@
           #{h.actions[1].name}
         %br
   - i = i +1
-  - j = 0
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
