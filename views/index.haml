@@ -14,9 +14,9 @@
               %hr
               - j = 0
               - h.comments.data.each do |com|
-                %p{:class => "#{j.even?}" + "_l"}
+                %p{:class => "#{j.even?}" + "_r"}
                   #{com.from.name}
-                %p{:class => "#{j.odd?}" + "_l"}
+                %p{:class => "#{j.odd?}" + "_r"}
                   #{com.message}
                 %br
           %a{:href => "#{h.actions[0].link}"}
