@@ -3,20 +3,16 @@
   #infoBoxes
     #policy
       - if h[:type] != "link"
-        %p{:class => "#{i.even?}" + "_l"}
-          #{h.from.name}
-        %p{:class => "#{i.even?}" + "_r"}
-          #{h.message}
+        %p{:class => "#{i.even?}" + "_l"} #{h.from.name}
+        %p{:class => "#{i.even?}" + "_r"} #{h.message}
         - if h.comments != nil
           - if h.comments.data != nil
             %hr
             #policy
               - j = 0
               - h.comments.data.each do |com|
-                %p{:class => "#{j.even?}" + "_l"}
-                  #{com.from.name}
-                %p{:class => "#{j.even?}" + "_r"}
-                  #{com.message}
+                %p{:class => "#{j.even?}" + "_l"} #{com.from.name}
+                %p{:class => "#{j.even?}" + "_r"} #{com.message}
                 - j = j+1
         %a{:href => "#{h.actions[0].link}"}
           #{h.actions[0].name}
