@@ -9,15 +9,15 @@
         %p{:class => "#{i.odd?}" + "_l"}
           #{h.message}
           %br
-          -if h.comments != nil
-            -if h.comments.data != nil
-              %hr
-              - j = 0
-              - h.comments.data.each do |com|
-                %p{:class => "#{j.even?}" + "_r"}
-                  #{com.from.name}
-                %p{:class => "#{j.odd?}" + "_r"}
-                  #{com.message}
+        -if h.comments != nil
+          -if h.comments.data != nil
+            %hr
+            - j = 0
+            - h.comments.data.each do |com|
+              %p{:class => "#{j.even?}" + "_r"}
+                #{com.from.name}
+              %p{:class => "#{j.odd?}" + "_r"}
+                #{com.message}
                 %br
           %a{:href => "#{h.actions[0].link}"}
             #{h.actions[0].name}
