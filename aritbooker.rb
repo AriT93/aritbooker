@@ -74,8 +74,7 @@ get '/sessions/create' do
     @user.atoken = @access_token
     @user.save
   end
-  @access_token
-
+  @access_token.to_s + @user.atoken
 end
 
 
