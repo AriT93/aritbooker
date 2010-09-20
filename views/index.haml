@@ -8,7 +8,7 @@
         - if h.comments != nil
           - if h.comments.data != nil
             %hr
-            #policy
+            #comment
               - j = 0
               - h.comments.data.each do |com|
                 %p{:class => "#{j.even?}" + "_l"} #{com.from.name}
