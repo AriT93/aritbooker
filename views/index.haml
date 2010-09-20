@@ -2,6 +2,7 @@
   = @user.email
   = @user.atoken
 
+  - @user.save
 %p access token is "#{@access_token}"
 
 - env.each do |envbit|
