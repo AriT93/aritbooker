@@ -18,13 +18,13 @@
                 #{com.from.name}
               %p{:class => "#{j.odd?}" + "_r"}
                 #{com.message}
-                %br
-          %a{:href => "#{h.actions[0].link}"}
-            #{h.actions[0].name}
-          |
-          %a{:href => "#{h.actions[1].link}"}
-            #{h.actions[1].name}
-          %br
+        %br
+        %a{:href => "#{h.actions[0].link}"}
+          #{h.actions[0].name}
+        |
+        %a{:href => "#{h.actions[1].link}"}
+          #{h.actions[1].name}
+        %br
 
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
