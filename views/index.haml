@@ -4,11 +4,7 @@
 - @fbs.me.feed.data.each do |d|
   %p #{d.message}
 
-
-
-
-
-%p access token is "#{@user.atoken}"
+= @fbs.me.news
 
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
