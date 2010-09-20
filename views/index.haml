@@ -2,10 +2,6 @@
   %p
     #{h.from.name}
     #{h.message}
-    - h.comments.data.each do |c|
-      #comments
-        #{c.from.name}
-        #{c.message}
     %a{:href => "#{h.actions[0].link}"}
       #{h.actions[0].name}
     %a{:href => "#{h.actions[1].link}"}
