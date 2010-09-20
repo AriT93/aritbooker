@@ -3,8 +3,7 @@
 
 
 = @fbs.me.home.data.each do |h|
-  %p
-    #{h.from.name} said  #{h.message}
+  #{h.from.name} said  #{h.message}
 
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
