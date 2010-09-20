@@ -8,8 +8,7 @@
           %fb:name{:uid => "#{h.from.id}", :useyou => 'false'}
         - else
           %p{:class => "#{i.even?}" + "_l"} #{h.from.name}
-          %p{:class => "#{i.even?}" + "_r"} #{h.message}
-
+        %p{:class => "#{i.even?}" + "_r"} #{h.message}
         - if h.comments != nil
           - if h.comments.data != nil
             - j = 1
