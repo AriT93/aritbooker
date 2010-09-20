@@ -1,11 +1,9 @@
 %p
   = @user.email
 
-- @fbs.me.feed.each do |entry|
-  - entry.each do |m|
-    - m.each do |w|
-      %p #{w}
-      %p "wibble"
+- @fbs.me.feed.data.each do |d|
+  %p #{d.message}
+
 
 
 
