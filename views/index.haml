@@ -9,8 +9,8 @@
         %p{:class => "#{i.odd?}" + "_l"}
           #{h.message}
           %br
-        -if h.comments != nil
-          -if h.comments.data != nil
+        - if h.comments != nil
+          - if h.comments.data != nil
             %hr
             - j = 0
             - h.comments.data.each do |com|
