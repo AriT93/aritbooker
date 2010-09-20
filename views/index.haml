@@ -2,7 +2,10 @@
   = @user.email
   = @user.atoken
 
-%p access token is
+%p access token is "#{@access_token}"
+
+- env.each do |envbit|
+  %p #{envbit.to_s}
 
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
