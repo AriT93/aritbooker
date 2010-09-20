@@ -3,15 +3,14 @@
   %br
   #{h.message}
   %br
-  - if h.comments
-    = #{h.comments.count}
+  #{h.attribution}
   %br
   %a{:href => "#{h.actions[0].link}"}
     #{h.actions[0].name}
   |
   %a{:href => "#{h.actions[1].link}"}
     #{h.actions[1].name}
-
+  %br
 
 %hr
 = @fbs.me.home.data.first
