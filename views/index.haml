@@ -2,8 +2,9 @@
   = @user.email
 
 - @fbs.me.feed.each do |entry|
-  %p #{entry}
-  %p "wibble"
+  - entry.each do |m|
+    %p #{m}
+    %p "wibble"
 
 
 
