@@ -1,11 +1,11 @@
 %p
   = @user.email
 
-- @fbs.me.feed
+= @fbs.me.feed
 
 
 
-%p access token is "#{@access_token}"
+%p access token is "#{@user.atoken}"
 
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
