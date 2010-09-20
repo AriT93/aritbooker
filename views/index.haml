@@ -6,6 +6,7 @@
         %p{:class => "#{i.even?}" + "_l"} #{h.from.name}
         %p{:class => "#{i.even?}" + "_r"} #{h.message}
         - if h.comments != nil
+          %p #{h.comments.count}
           - if h.comments.data != nil
             - j = 1
             #comment
