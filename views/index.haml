@@ -3,7 +3,7 @@
   %br
   #{h.message}
   %br
-  - if h.comments.count
+  - if h.comments
     = #{h.comments.count}
   %br
   %a{:href => "#{h.actions[0].link}"}
