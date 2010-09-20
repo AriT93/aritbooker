@@ -1,7 +1,8 @@
 %p
   = @user.email
 
-= @fbs.me.feed
+- @fbs.me.feed.each do |entry|
+  %p #{entry[:name]} said #{entry[:message]}
 
 
 
