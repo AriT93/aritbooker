@@ -69,8 +69,8 @@ get '/sessions/create' do
   @access_token_hash = MiniFB.oauth_access_token(@@yaml["app_id"],@@yaml["callback_url"] + "/sessions/create",@@yaml["secret_key"], params[:code])
   @access_token = @access_token_hash["access_token"]
   env[:access_token] = @access_token
-  @user.atoken = @access_token
-  @user.atoken
+  @access_token
+
 end
 
 
