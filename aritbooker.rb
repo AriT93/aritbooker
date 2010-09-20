@@ -70,8 +70,11 @@ get '/sessions/create' do
   if @user != nil
     @user.atoken = @access_token
     @user.name = "Ari"
-    @user.save
-    "not nill"
+    if @user.save
+      "saved"
+    else
+      "not nill"
+    end
   else
     @user = AbUser.new(:email => current_user.email)
     @user.atoken = @access_token
