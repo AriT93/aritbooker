@@ -41,7 +41,6 @@ end
 
 before do
   @user = nil
-  @@access_token = ""
 end
 
 get '/' do
@@ -70,9 +69,10 @@ get '/sessions/create' do
   if @user == nil
     @user = AbUser.first(:email => current_user.email)
     @user.atoken = @access_token
+    @user.name = "Ari"
     @user.save
   end
-  haml :index
+  redirect "/"
 end
 
 
