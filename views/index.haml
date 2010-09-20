@@ -5,6 +5,11 @@
   %br
   -if h.comments != nil
     #{h.comments.count}
+    %br
+    -if h.comments.data != nil
+      - h.comments.data.each do |com|
+        #{com.from.name}  -- #{com.message}
+        %br
   %br
   %a{:href => "#{h.actions[0].link}"}
     #{h.actions[0].name}
