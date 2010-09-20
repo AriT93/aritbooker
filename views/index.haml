@@ -2,7 +2,8 @@
   %p
     #{h.from.name}
     #{h.message}
-    = #{h.comments.count}
+  %hr
+  = #{h.comments.count}
     %a{:href => "#{h.actions[0].link}"}
       #{h.actions[0].name}
       |
