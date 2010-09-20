@@ -67,9 +67,14 @@ get '/sessions/create' do
   @access_token = @access_token_hash["access_token"]
   env[:access_token] = @access_token
   @user = AbUser.first(:email => current_user.email)
-  if @user == nil
+  if @user != nil
     @user.atoken = @access_token
     @user.name = "Ari"
+    @user.save
+  else
+    @user = AbUser.new(:email => current_user.email)
+    @user.atoken = @access_token
+    @user.name = "lbah"
     @user.save
   end
   if @user.save
