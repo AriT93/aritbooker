@@ -17,7 +17,7 @@
               %p{:class => "#{j.even?}" + "_l"}
                 - if fb[:user]
                   %fb:profile-pic{:uid => "#{com.from.id}", :height => "25px", :width => "25px"}
-                  %fb:name{:uid => "#{h.from.id}", :useyou => 'false'}
+                  %fb:name{:uid => "#{com.from.id}", :useyou => 'false'}
                 - else
                   #{com.from.name}
                 #{com.message}
