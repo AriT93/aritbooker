@@ -27,7 +27,7 @@
     #contentBody
       = yield
     :javascript
-      FB.init( "#{fb.api_key}", "/receiver"})
+      FB.init( "#{fb.api_key}", "/receiver")
     .clear
   #footer
     = render_login_logout
