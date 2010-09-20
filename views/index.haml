@@ -1,7 +1,10 @@
 - @fbs.me.home.data.each do |h|
   #{h.from.name}
+  %br
   #{h.message}
-  = #{h.comments.count}
+  %br
+  = "#{h.comments[:count]}"
+  %br
   %a{:href => "#{h.actions[0].link}"}
     #{h.actions[0].name}
   |
