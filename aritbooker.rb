@@ -73,7 +73,9 @@ get '/sessions/create' do
     if @user.save
       "saved"
     else
-      "not nill"
+      @user.errors.each do |a|
+        a.to_s
+      end
     end
   else
     @user = AbUser.new(:email => current_user.email)
