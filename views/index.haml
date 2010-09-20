@@ -19,7 +19,7 @@
                   #{com.from.name}
                 %p{:class => "#{j.even?}" + "_r"}
                   #{com.message}
-              - j = j +1
+                - j = j+1
         %br
         %a{:href => "#{h.actions[0].link}"}
           #{h.actions[0].name}
@@ -27,6 +27,6 @@
         %a{:href => "#{h.actions[1].link}"}
           #{h.actions[1].name}
         %br
-      - i = i +1
+  - i = i +1
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
