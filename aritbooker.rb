@@ -72,7 +72,7 @@ get '/sessions/create' do
     @user.name = "Ari"
     @user.save
   end
-  @user.Save + " : " + @user.name
+  @user.save + " : " + @user.name
 
 end
 
