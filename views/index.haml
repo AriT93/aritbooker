@@ -2,8 +2,10 @@
   %p
     #{h.from.name}
     #{h.message}
+    = #{h.comments}
     %a{:href => "#{h.actions[0].link}"}
       #{h.actions[0].name}
+      |
     %a{:href => "#{h.actions[1].link}"}
       #{h.actions[1].name}
 %hr
