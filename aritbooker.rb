@@ -69,23 +69,11 @@ get '/sessions/create' do
   @user = AbUser.first(:email => current_user.email)
   if @user != nil
     @user.atoken = @access_token
-    @user.name = "Ari"
-    if @user.save
-      "saved"
-    else
-      @user.errors.each do |a|
-        a.to_s
-      end
-    end
-  else
-    @user = AbUser.new(:email => current_user.email)
-    @user.atoken = @access_token
     @user.name = "lbah"
     @user.save
-    "nill"
   end
+  redirect "/"
 end
-
 
 get '/css/style.css' do
   content_type 'text/css'
