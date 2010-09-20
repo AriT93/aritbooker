@@ -3,8 +3,9 @@
 
 - @fbs.me.feed.each do |entry|
   - entry.each do |m|
-    %p #{m}
-    %p "wibble"
+    - m.each do |w|
+      %p #{m}
+      %p "wibble"
 
 
 
