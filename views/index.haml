@@ -5,10 +5,8 @@
       - if h[:type] != "link"
         %p{:class => "#{i.even?}" + "_l"}
           #{h.from.name}
-          %br
         %p{:class => "#{i.even?}" + "_r"}
           #{h.message}
-          %br
         - if h.comments != nil
           - if h.comments.data != nil
             %hr
@@ -20,7 +18,6 @@
                 %p{:class => "#{j.even?}" + "_r"}
                   #{com.message}
                 - j = j+1
-        %br
         %a{:href => "#{h.actions[0].link}"}
           #{h.actions[0].name}
         |
