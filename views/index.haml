@@ -4,7 +4,8 @@
 - @fbs.me.feed.data.each do |d|
   %p #{d.message}
 
-= @fbs.me.home
+= @fbs.me.home.each do |h|
+  %p "#{p.name}  said #{p.message}"
 
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
