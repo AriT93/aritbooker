@@ -72,7 +72,7 @@ get '/sessions/create' do
   @user = AbUser.first(:email => current_user.email)
   @user.atoken = @access_token
   @user.save
-  @access_token.to_s + " : " + @user.email + " : " + current_user.email
+  @access_token.to_s + " : " + @user.atoken + " : " + current_user.email
 end
 
 
