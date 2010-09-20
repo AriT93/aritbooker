@@ -71,16 +71,13 @@ get '/sessions/create' do
     @user.atoken = @access_token
     @user.name = "Ari"
     @user.save
+    "not nill"
   else
     @user = AbUser.new(:email => current_user.email)
     @user.atoken = @access_token
     @user.name = "lbah"
     @user.save
-  end
-  if @user.save
-    "True"
-  else
-    "False"
+    "nill"
   end
 end
 
