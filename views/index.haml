@@ -3,10 +3,13 @@
   #infoBoxes
     #policy
       - if h[:type] != "link"
-        %p{:class => "#{i.even?}" + "_l"} #{h.from.name}
-        %p{:class => "#{i.even?}" + "_r"} #{h.message}
+        - if fb[:user]
+          %fb:profile-pic{:uid => "#{h.from.id}", :height => "25px", :width => "25px"}
+          %fb:name{:uid => "#{h.from.id}", :useyou => 'false'}
+        - else
+          %p{:class => "#{i.even?}" + "_l"} #{h.from.name}
+          %p{:class => "#{i.even?}" + "_r"} #{h.message}
         - if h.comments != nil
-          %p #{h.comments.count}
           - if h.comments.data != nil
             - j = 1
             #comment
