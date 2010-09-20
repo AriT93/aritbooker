@@ -1,6 +1,8 @@
 %p
   = @user.email
   = @user.name
+%fb:profile-pic{:uid => fb[:user], :height => "25px", :width => "25px"}
+%fb:name{:uid => fb[:user], :useyou => 'false'}
 
 - @fbs.me.home.data.each do |h|
   %p #{h.from.name} #{h.message}
