@@ -72,8 +72,11 @@ get '/sessions/create' do
     @user.name = "Ari"
     @user.save
   end
-  @user.save
-
+  if @user.save
+    "True"
+  else
+    "False"
+  end
 end
 
 
