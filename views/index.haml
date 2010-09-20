@@ -3,7 +3,7 @@
   %br
   #{h.message}
   %br
-  - h.comments.data.each do |comment|
+  - h.comments.each do |comment|
     "#{comment.from.name}  -- #{comment.message}"
   %br
   %a{:href => "#{h.actions[0].link}"}
