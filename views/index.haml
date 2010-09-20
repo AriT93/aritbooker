@@ -1,22 +1,25 @@
+- i = 0
 - @fbs.me.home.data.each do |h|
-  #accounts
-    - if h[:type] != "link"
-      #{h.from.name}
-      %br
-      #{h.message}
-      %br
-      -if h.comments != nil
-        -if h.comments.data != nil
-          - h.comments.data.each do |com|
-            #{com.from.name}  -- #{com.message}
-            %br
-      %br
-      %a{:href => "#{h.actions[0].link}"}
-        #{h.actions[0].name}
-      |
-      %a{:href => "#{h.actions[1].link}"}
-        #{h.actions[1].name}
-      %br
+  #infoBoxes
+    #policy
+      - if h[:type] != "link"
+        %p{:class => "#{i.even?}" + "_l"}
+          #{h.from.name}
+          %br
+          #{h.message}
+          %br
+          -if h.comments != nil
+            -if h.comments.data != nil
+              - h.comments.data.each do |com|
+                #{com.from.name}  -- #{com.message}
+                %br
+          %br
+          %a{:href => "#{h.actions[0].link}"}
+            #{h.actions[0].name}
+          |
+          %a{:href => "#{h.actions[1].link}"}
+            #{h.actions[1].name}
+          %br
 %hr
 
 %a{:href => "#{@oauth_url}"}
