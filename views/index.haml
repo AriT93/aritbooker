@@ -10,7 +10,8 @@
               - j = 0
               - h.comments.data.each do |com|
                 #comment
-                  %p{:class => "#{j.even?}" + "_l"} "#{com.from.name} : #{com.message}"
+                  %p{:class => "#{j.even?}" + "_l"}
+                    "#{com.from.name} : #{com.message}"
                 - j = j+1
         %a{:href => "#{h.actions[0].link}"}
           #{h.actions[0].name}
