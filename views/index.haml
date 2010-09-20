@@ -6,12 +6,17 @@
         %p{:class => "#{i.even?}" + "_l"}
           #{h.from.name}
           %br
+        %p{:class => "#{i.odd?}" + "_l"}
           #{h.message}
           %br
           -if h.comments != nil
             -if h.comments.data != nil
+              - j = 0
               - h.comments.data.each do |com|
-                #{com.from.name}  -- #{com.message}
+                %p{:class => "#{j.even?}" + "_r"}
+                  #{com.from.name}
+                %p{:class => "#{j.odd?}" + "_r"}
+                  #{com.message}
                 %br
           %br
           %a{:href => "#{h.actions[0].link}"}
