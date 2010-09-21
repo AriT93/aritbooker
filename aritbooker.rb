@@ -40,11 +40,10 @@ helpers do
 end
 
 before do
-    @user = AbUser.first(:email => current_user.email)
-    if @user == nil
-      @user = AbUser.new(:email => current_user.email)
-      @user.save
-    end
+  @user = fb2hd
+  if @user == nil
+    @user = AbUser.first(:email => current_user.email))
+  end
   @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
 end
 
