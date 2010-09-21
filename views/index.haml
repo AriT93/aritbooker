@@ -37,7 +37,7 @@
             - if h.comments.data != nil
               #{h.comments.count}
               |
-              %p #{h.comments}
+              %p #{h.comments[:count]}
       %br
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
