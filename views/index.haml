@@ -16,7 +16,6 @@
         .clear
         - if h.comments != nil
           - if h.comments.data != nil
-            %p #{h.comments.count}
             .comment
             - h.comments.data.each do |com|
               - if fb[:user]
@@ -35,9 +34,7 @@
           |
           - if h.comments != nil
             - if h.comments.data != nil
-              #{h.comments.count}
-              |
-              %p #{h.comments[:count]}
+              #{h.comments[:count]}
       %br
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
