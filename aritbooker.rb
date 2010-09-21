@@ -76,7 +76,7 @@ get '/sessions/create' do
 end
 
 get '/like/:id' do
-  @fb.post(@access_token,params[:id],:type="like")
+  @fb.post(@access_token,params[:id],:type=>"like")
 
 end '
 get '/css/style.css' do
