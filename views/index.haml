@@ -26,10 +26,10 @@
               %p{:class => "true"}
                 #{com.message}
         .false
-          %a{:href => "#{h.actions[0].link}"}
+          %a{:href => "/comment/#{h.id}"}
             #{h.actions[0].name}
           |
-          %a{:href => "#{h.actions[1].link}"}
+          %a{:href => "/like/#{h.id}"}
             #{h.actions[1].name}
           |
           - if h.comments != nil
