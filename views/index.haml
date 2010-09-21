@@ -32,10 +32,10 @@
           %a{:href => "#{h.actions[1].link}"}
             #{h.actions[1].name}
           |
-          - if h.comments != nil 
+          - if h.comments != nil
             - if h.comments.data != nil
               #{h.comments.count}
-              #{h.comments}
+              #{h.comments[0]}
       %br
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
