@@ -8,9 +8,11 @@
             %fb:name{:uid => "#{h.from.id}", :useyou => 'false'}
         - else
           .statusImg
-          #{h.from.name}
+          .false
+            #{h.from.name}
         .status
-          #{h.message}
+          %p
+            #{h.message}
         .clear
         - if h.comments != nil
           - if h.comments.data != nil
