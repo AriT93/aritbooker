@@ -78,7 +78,8 @@ end
 get '/like/:id' do
   @fb.post(@access_token,params[:id],:type=>"like")
 
-end '
+end
+
 get '/css/style.css' do
   content_type 'text/css'
   sass :style
