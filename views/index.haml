@@ -26,11 +26,11 @@
               #{com.from.name}
             #{com.message}
           - j = j+1
-    %a{:href => "#{h.actions[0].link}"}
-      #{h.actions[0].name}
-    |
-    %a{:href => "#{h.actions[1].link}"}
-      #{h.actions[1].name}
+      %a{:href => "#{h.actions[0].link}"}
+        #{h.actions[0].name}
+      |
+      %a{:href => "#{h.actions[1].link}"}
+        #{h.actions[1].name}
     %br
   - i = i +1
 %a{:href => "#{@oauth_url}"}
