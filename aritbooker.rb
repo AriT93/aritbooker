@@ -40,7 +40,12 @@ helpers do
 end
 
 before do
-  @user = nil
+    @user = AbUser.first(:email => current_user.email)
+    if @user == nil
+      @user = AbUser.new(:email => current_user.email)
+      @user.save
+    end
+  @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
 end
 
 get '/' do
@@ -76,7 +81,6 @@ get '/sessions/create' do
 end
 
 get '/like/:id' do
-  @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
   @fbs.post(@access_token,params[:id],:type=>"like")
 end
 
