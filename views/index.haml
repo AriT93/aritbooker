@@ -15,7 +15,7 @@
     .clear
     - if h.comments != nil
       - if h.comments.data != nil
-        - j = 1
+        - j = i - 1
         .comment
         - h.comments.data.each do |com|
           %p{:class => "#{j.even?}"}
