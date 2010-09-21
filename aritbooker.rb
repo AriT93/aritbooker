@@ -76,8 +76,8 @@ get '/sessions/create' do
 end
 
 get '/like/:id' do
+  @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
   @fbs.post(@access_token,params[:id],:type=>"like")
-
 end
 
 get '/css/style.css' do
