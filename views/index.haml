@@ -15,6 +15,7 @@
             #{h.message}
         .clear
         - if h.comments != nil
+          %p #{h.comments.count.to_s}
           - if h.comments.data != nil
             .comment
             - h.comments.data.each do |com|
@@ -35,7 +36,7 @@
           - if h.comments != nil
             - if h.comments.data != nil
               #{h.comments.count}
-              #{h.comments.first}
+              --- #{h.comments.first}
               #{h.comments}
       %br
 %a{:href => "#{@oauth_url}"}
