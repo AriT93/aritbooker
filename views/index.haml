@@ -25,11 +25,14 @@
                 %p #{com.from.name}
               %p{:class => "true"}
                 #{com.message}
-        %a{:href => "#{h.actions[0].link}"}
-          #{h.actions[0].name}
-        |
-        %a{:href => "#{h.actions[1].link}"}
-          #{h.actions[1].name}
+        .false
+          %a{:href => "#{h.actions[0].link}"}
+            #{h.actions[0].name}
+          |
+          %a{:href => "#{h.actions[1].link}"}
+            #{h.actions[1].name}
+          |
+          #{h.comments.count}
       %br
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
