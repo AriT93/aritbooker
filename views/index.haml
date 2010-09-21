@@ -9,15 +9,16 @@
           %fb:name{:uid => "#{h.from.id}", :useyou => 'false'}
       - else
         .statusImg
-        %p{:class => "#{i.even?}" + "_l"} #{h.from.name}
+        %p{:class => "#{i.even?}"} #{h.from.name}
+      .clear
       .status
-        %p{:class => "#{i.even?}" + "_r"} #{h.message}
+        %p{:class => "#{i.even?}"} #{h.message}
       - if h.comments != nil
         - if h.comments.data != nil
           - j = 1
           .comment
           - h.comments.data.each do |com|
-            %p{:class => "#{j.even?}" + "_l"}
+            %p{:class => "#{j.even?}"}
               - if fb[:user]
                 %fb:profile-pic{:uid => "#{com.from.id}", :height => "25px", :width => "25px"}
                 %fb:name{:uid => "#{com.from.id}", :useyou => 'false'}
