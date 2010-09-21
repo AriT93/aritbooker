@@ -1,36 +1,36 @@
 - i = 0
+#infoBoxes
 - @fbs.me.home.data.each do |h|
-  #infoBoxes
-    .statusBox
-      - if h[:type] != "link"
-        - if fb[:user]
-          .statusImg
-            %fb:profile-pic{:uid => "#{h.from.id}", :height => "25px", :width => "25px"}
-            %fb:name{:uid => "#{h.from.id}", :useyou => 'false'}
-        - else
-          .statusImg
-          %p{:class => "#{i.even?}" + "_l"} #{h.from.name}
-        .status
-          %p{:class => "#{i.even?}" + "_r"} #{h.message}
-        - if h.comments != nil
-          - if h.comments.data != nil
-            - j = 1
-            .comment
-            - h.comments.data.each do |com|
-              %p{:class => "#{j.even?}" + "_l"}
-                - if fb[:user]
-                  %fb:profile-pic{:uid => "#{com.from.id}", :height => "25px", :width => "25px"}
-                  %fb:name{:uid => "#{com.from.id}", :useyou => 'false'}
-                - else
-                  #{com.from.name}
-                #{com.message}
-              - j = j+1
-        %a{:href => "#{h.actions[0].link}"}
-          #{h.actions[0].name}
-        |
-        %a{:href => "#{h.actions[1].link}"}
-          #{h.actions[1].name}
-        %br
+  .statusBox
+    - if h[:type] != "link"
+      - if fb[:user]
+        .statusImg
+          %fb:profile-pic{:uid => "#{h.from.id}", :height => "25px", :width => "25px"}
+          %fb:name{:uid => "#{h.from.id}", :useyou => 'false'}
+      - else
+        .statusImg
+        %p{:class => "#{i.even?}" + "_l"} #{h.from.name}
+      .status
+        %p{:class => "#{i.even?}" + "_r"} #{h.message}
+      - if h.comments != nil
+        - if h.comments.data != nil
+          - j = 1
+          .comment
+          - h.comments.data.each do |com|
+            %p{:class => "#{j.even?}" + "_l"}
+              - if fb[:user]
+                %fb:profile-pic{:uid => "#{com.from.id}", :height => "25px", :width => "25px"}
+                %fb:name{:uid => "#{com.from.id}", :useyou => 'false'}
+              - else
+                #{com.from.name}
+              #{com.message}
+            - j = j+1
+      %a{:href => "#{h.actions[0].link}"}
+        #{h.actions[0].name}
+      |
+      %a{:href => "#{h.actions[1].link}"}
+        #{h.actions[1].name}
+      %br
   - i = i +1
 %a{:href => "#{@oauth_url}"}
   Link to Facebook
