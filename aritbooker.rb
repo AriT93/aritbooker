@@ -81,7 +81,7 @@ get '/sessions/create' do
 end
 
 get '/like/:id' do
-  MiniFB.post(@access_token,params[:id],:type=>"like")
+  MiniFB.post(@access_token,params[:id],:type=>"likes")
 end
 
 get '/css/style.css' do
