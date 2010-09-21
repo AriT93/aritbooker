@@ -37,12 +37,13 @@ helpers do
       @user = AbUser.first(:email => @email.email)
     end
   end
+  @user
 end
 
 before do
   @user = fb2hd
   if @user == nil
-    @user = AbUser.first(:email => current_user.email))
+    @user = AbUser.first(:email => current_user.email)
   end
   @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
 end
