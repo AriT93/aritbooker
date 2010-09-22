@@ -4,7 +4,7 @@
     %span Comment
   %p #{id}
   %fieldset{:id => "comment_menu"}
-    %form{:method => "post", :id => "comment", :action => "comment/#{id}"}
+    %form{:method => "post", :id => "comment_#{id}", :action => "comment/#{id}"}
       %p
         %label{:for => "comment"} Comment
         %input{:id => "comment" , :name => "comment", :value =>"", :title =>"comment", :tabindex => "4", :type => "text"}
