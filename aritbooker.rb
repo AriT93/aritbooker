@@ -52,11 +52,13 @@ helpers do
 end
 
 before do
-  @user = fb2hd
-  if @user == nil
-    @user = AbUser.first(:email => current_user.email)
+  if current_user.email
+    @user = fb2hd
+    if @user == nil
+      @user = AbUser.first(:email => current_user.email)
+    end
+    @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
   end
-  @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
 end
 
 get '/' do
