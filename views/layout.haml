@@ -17,7 +17,7 @@
        $(".comment_submit").click(function() {
            var element = $(this);
            var submitBtn = element.find("input[type='submit']");
-           $(submitBtn).attr("disabled", "true");
+           $(submitBtn).attr("disabled", "disabled");
            var Id = element.attr("id");
            var urlToPost = "comment/"+Id;
            var dataString = 'comment=' + $("#comment_"+Id).val();
