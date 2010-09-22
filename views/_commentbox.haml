@@ -1,6 +1,6 @@
 %a{:href => "#", :class => "comment_button"} Comment
 .panel{:id => "slidepanel_#{id}"}
-    %form{:method => "post", :id => "#{id}", :action => ""}
-      %label{:for => "comment_#{id}"} Comment
-      %input{:id => "comment_#{id}" , :name => "comment", :value =>"", :title =>"comment",  :type => "text"}
-      %input{:id => "#{id}", :value =>"comment", :type => "submit", :class => "comment_submit"}
+  %form{:method => "post", :id => "#{id}", :action => ""}
+    %label{:for => "comment_#{id}"} Comment
+    %input{:id => "comment_#{id}" , :name => "comment", :value =>"", :title =>"comment",  :type => "text"}
+    %input{:id => "#{id}", :value =>"comment", :type => "submit", :class => "comment_submit"}
