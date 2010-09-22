@@ -26,7 +26,7 @@
               %p{:class => "true"}
                 #{com.message}
         .false
-          = partial("commentbox", :collection => h)
+          = partial("commentbox", :collection => {:h = h})
           |
           %a{:href => "/like/#{h.id}"}
             -if h.actions
