@@ -89,7 +89,7 @@ get '/comment/:id' do
 end
 
 post '/comment/:id' do
-  params[:comment] + " ; " + params[:id]
+#  @fbs.post(params[:id], :type => "comments", :params =>{ :message => params[:comment]})
 end
 
 get '/css/style.css' do
