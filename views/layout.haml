@@ -22,7 +22,7 @@
            var dataString = 'comment=' + $("#comment_"+Id).val();
            $.ajax({
               url: urlToPost,
-              global: false;
+              global: false,
               type: "POST",
               data: dataString,
               async:false,
