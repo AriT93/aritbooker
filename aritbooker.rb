@@ -37,10 +37,15 @@ helpers do
       @user = AbUser.first(:email => @email.email)
     end
   end
+  @user
 end
 
 before do
-  @user = nil
+  @user = fb2hd
+  if @user == nil
+    @user = AbUser.first(:email => current_user.email)
+  end
+  @fbs = MiniFB::OAuthSession.new(@user.atoken,"en_US")
 end
 
 get '/' do
@@ -73,6 +78,11 @@ get '/sessions/create' do
     @user.save
   end
   redirect "/"
+end
+
+get '/like/:id' do
+  @fbs.post(params[:id],:type => "likes")
+  redirect '/'
 end
 
 get '/css/style.css' do
