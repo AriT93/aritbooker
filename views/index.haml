@@ -31,7 +31,8 @@
               #{h.actions[0].name}
           |
           %a{:href => "/like/#{h.id}"}
-
+            -if h.actions
+              #{h.actions[1].name}
           |
           - if h.comments != nil
             - if h.comments.data != nil
