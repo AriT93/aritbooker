@@ -1,12 +1,6 @@
-#container
-  #topnav{:class => "topnav"}
-    %a{:href => "comment", :class =>"comment"}
-    %span Comment
-  %p #{id}
-  %fieldset{:id => "comment_menu"}
-    %form{:method => "post", :id => "#{id}", :action => "comment/#{id}"}
-      %p
-        %label{:for => "comment_#{id}"} Comment
-        %input{:id => "comment_#{id}" , :name => "comment", :value =>"", :title =>"comment",  :type => "text"}
-      %p{:class => "remember"}
-        %input{:id => "#{id}", :value =>"comment", :type => "submit", :class => "comment_submit"}
+%a{:href => "#", :class => "comment_button"} Comment
+.panel{:id => "slidepanel_#{id}"}
+    %form{:method => "post", :id => "#{id}", :action => ""}
+      %label{:for => "comment_#{id}"} Comment
+      %input{:id => "comment_#{id}" , :name => "comment", :value =>"", :title =>"comment",  :type => "text"}
+      %input{:id => "#{id}", :value =>"comment", :type => "submit", :class => "comment_submit"}

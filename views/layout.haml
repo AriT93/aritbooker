@@ -7,21 +7,12 @@
     %script{:tyupe => 'text/javascript', :src => 'js/jquery.js'}
     :javascript
       $(document).ready(function(){
-       $(".comment").click(function(e){
-           e.preventDefault();
-           $("fieldset#comment_menu").toggle();
-           $(".comment").toggleClass("menu-open");
-          });
-
-       $("fieldset#comment_menu").mouseup(function(){
-          return false;
-          });
-       $(document).mousup(function(e) {
-          if($(e.target).parent("a.comment").length==0){
-            $(".comment").removeClass("menu-open");
-            $("fieldset#comment_menu").hide();
-          }
-        });
+       $(".comment_button").click(function() {
+           var Id = $(this).attr("id");
+           $("#slidepanel"+Id).slideToggle(300);
+           $(this).toggleClass("active");
+           return false;
+         });
        $(".comment_submit").click(function() {
            var element = $(this);
            var Id = element.attr("id");
