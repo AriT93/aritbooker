@@ -8,7 +8,9 @@
     :javascript
       $(document).ready(function(){
        $(".comment_button").click(function() {
-           var Id = $(this).attr("id");
+           var element = $(this);
+           var Id = element.attr("id");
+           alert(Id);
            $("#slidepanel"+Id).slideToggle(300);
            $(this).toggleClass("active");
            return false;
