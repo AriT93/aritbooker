@@ -2,6 +2,7 @@
   #topnav{:class => "topnav"}
     %a{:href => "comment", :class =>"comment"}
     %span Comment
+  %p #{id}
   %fieldset{:id => "comment_menu"}
     %form{:method => "post", :id => "comment", :action => "comment/#{id}"}
       %p
