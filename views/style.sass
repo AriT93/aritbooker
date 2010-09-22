@@ -196,3 +196,118 @@ html
   float: left
   padding-left: 5px
   padding-right: 5px
+#container
+  width: $rowLeft
+  margin: 0 auto
+  postion: relative
+#content
+  width: $rowLeft
+a:link, a:visited
+  color: #27B
+  text-decoration: none
+a:hover
+  text-decoration: underline
+a img
+  text-decoration: underline
+#topnav
+  pading: 10px 0px 12px
+  font-size: 11px
+  line-height: 23px
+  text-align: right
+#topnav a.comment
+  background: lighten($brandColor, 50%)
+  padding: 4px 6px 6px
+  text-decoration: none
+  font-weight: bold
+  color: #FFF
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  *background: transparent url("images/signin-nav-bg-ie.png") no-repeat 0 0
+  *padding: 4px 12px 6px
+#topnav a.comment:hover
+  background: lighten($brandColor, 50%)
+  *background: transparent url("images/signin-nav-bg-hover.png") no-repeat 0 0
+  *padding: 4px 12px 6px
+#topnav a.comment, #topnav a.comment:hover
+  *background-position: 0 3px!important
+a.comment
+  postion: relative
+  margin-left: 3px
+a.comment span
+  background-image: url("images/toggle_down_light.png")
+  background-repeat: no-repeat
+  background-position: 100% 50%
+  padding: 4px 16px 6px 0
+#topnav a.menu-open
+  background: #ddeef6!important
+  color: #666!important
+  outline: none
+#small_signup
+  display: inline
+  float: none
+  line-height: 23px
+  margin: 25px 0 0
+  width: 170px
+a.comment.menu-open span
+  background-image: url("images/toggle_up_dark.png")
+  color: #789
+#comment_menu
+  -moz-border-radius-topleft: 5px
+  -moz-border-radius-bottomleft: 5px
+  -moz-border-radius-bottomright: 5px
+  -webkit-border-top-left-radius: 5px
+  -webkit-border-bottom-left-radius: 5px
+  -webkit-border-bottom-right-radius: 5px
+  display: none
+  background-color: #ddeef6
+  position: absolute
+  width: 210px
+  z-index: 100
+  border: 1px transparent
+  text-align: left
+  padding: 12px
+  top:  24.5px
+  right:  0px
+  margin-top: 5px
+  margin-right:  0px
+  *margin-right:  -1px
+  color: #789
+  font-size: 11px
+#comment_menu input[type=text], #comment_menu input[type=password]
+  display:  block
+  -moz-border-radius:  4px
+  -webkit-border-radius:  4px
+  border:  1px solid #ACE
+  font-size:  13px
+  margin:  0 0 5px
+  padding:  5px
+#comment_menu p
+  margin:  0
+#sigin_menu a
+  color:  #6AC
+#comment_menu label
+  font-weight:  normal
+#comment_menu p.remember
+  padding: 10px 0
+#comment_menu p.forgot, #comment_menu p.complete
+  clear: both
+  margin: 5px 0
+#comment_menu p a
+  color: #27B!important
+#comment_submit
+  -moz-border-radius: 4px
+  -webkit-border-radius: 4px
+  background: #39d url('images/bg-btn-blue.png') repeat-x scroll 0 0
+  border: 1px solid #39D
+  color: #fff
+  text-shadow: 0 -1px 0 #39d
+  padding: 4px 10px 5px
+  font-size: 11px
+  margin: 0 5px 0 0
+  font-weight: bold
+#comment_submit::-moz-focus-inner
+  padding:  0
+  border:  0
+#comment_submit:hover, #comment_submit:focus
+  background-position:  0 -5px
+  cursor: pointer

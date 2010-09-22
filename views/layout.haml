@@ -4,6 +4,25 @@
     %title Insure Barn
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/style.css'}
     %script{:type => 'text/javascript', :src => 'http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US'}
+    %script{:tyupe => 'text/javascript', :src => 'js/jquery.js'}
+    :javascript
+      $(document).ready(function(){
+       $(".signin").click(function(e){
+           e.preventDefault();
+           $("fieldset#comment_menu").toggle();
+           $(".signin").toggleClass("menu-open");
+          });
+
+       $("fieldset#signin_menu").mouseup(function(){
+          return false;
+          });
+       $(document).mousup(function(e) {
+          if($(e.target).parent("a.comment").length==0){
+            $(".signin").removeClass("menu-open");
+            $("fieldset#signin_menu").hide();
+          }
+        });
+      });
   %body
   #header
     %img{:class => "ad", :src => "/images/masthead.gif", :alt => "Insure Barn"}
