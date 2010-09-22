@@ -15,6 +15,10 @@
            $(this).toggleClass("active");
            return false;
          });
+    });
+
+    :javascript
+      $(document).ready(function(){
        $(".comment_submit").click(function() {
            var element = $(this);
            var Id = element.attr("id");
@@ -28,7 +32,7 @@
                   }
                 });
            return false;});
-      });
+    });
   %body
   #header
     %img{:class => "ad", :src => "/images/masthead.gif", :alt => "Insure Barn"}
