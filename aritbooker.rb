@@ -84,6 +84,9 @@ get '/like/:id' do
   @fbs.post(params[:id],:type => "likes")
   redirect '/'
 end
+post 'comment/:id' do
+  params[:id]
+end
 
 get '/css/style.css' do
   content_type 'text/css'

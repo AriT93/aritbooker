@@ -26,9 +26,7 @@
               %p{:class => "true"}
                 #{com.message}
         .false
-          %a{:href => "/comment/#{h.id}"}
-            -if h.actions
-              #{h.actions[0].name}
+          = render("commentbox", :collection => h)
           |
           %a{:href => "/like/#{h.id}"}
             -if h.actions
