@@ -16,7 +16,7 @@
        $("fieldset#comment_menu").mouseup(function(){
           return false;
           });
-       $(document).mouseup(function(e) {
+       $(document).mousup(function(e) {
           if($(e.target).parent("a.comment").length==0){
             $(".comment").removeClass("menu-open");
             $("fieldset#comment_menu").hide();
