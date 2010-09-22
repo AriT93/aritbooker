@@ -21,13 +21,13 @@
            var urlToPost = "comment/"+Id;
            var dataString = 'comment=' + $("#comment_"+Id).val();
            $.ajax({
-              type: "POST",
               url: urlToPost,
+              global: false;
+              type: "POST",
               data: dataString,
-              cache: false,
+              async:false,
               sucess: function(html){
-                 alert(html);
-                  location.reload();
+                  alert(html);
                   $("#slidepanel_"+Id).slideToggle(300);
                   }
                 });
