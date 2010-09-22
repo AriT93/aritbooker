@@ -27,7 +27,8 @@
                 #{com.message}
         .false
           %a{:href => "/comment/#{h.id}"}
-
+            -if h.actions
+              #{h.actions[0].name}
           |
           %a{:href => "/like/#{h.id}"}
 
