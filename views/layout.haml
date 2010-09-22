@@ -16,7 +16,8 @@
          });
        $(".comment_submit").click(function() {
            var element = $(this);
-           $(element).attr("disabled","true");
+           var submitBtn = element.find("input[type='submit']");
+           $(submitBtn).attr("disabled", "true");
            var Id = element.attr("id");
            var urlToPost = "comment/"+Id;
            var dataString = 'comment=' + $("#comment_"+Id).val();
