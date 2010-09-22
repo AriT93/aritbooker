@@ -18,13 +18,18 @@
        $(".comment_submit").click(function() {
            var element = $(this);
            var Id = element.attr("id");
+           var url = "comment/"+Id;
+
            $.ajax({
               type: "POST",
               url: "comment/"+Id,
               data: $("#comment_"+Id).val(),
               cache: false,
+              async: false,
               sucess: function(html){
+                 alert(html);
                   location.reload();
+                  $("#slidepanel_"+Id).slideToggle(300);
                   }
                 });
            return false;});
