@@ -85,11 +85,11 @@ get '/like/:id' do
   redirect '/'
 end
 get '/comment/:id' do
-  params[:comment]
+  params[:comment] + " ; " + params[:id]
 end
 
 post '/comment/:id' do
-  params[:comment]
+  params[:comment] + " ; " + params[:id]
 end
 
 get '/css/style.css' do
