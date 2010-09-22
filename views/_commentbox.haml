@@ -6,7 +6,7 @@
   %fieldset{:id => "comment_menu"}
     %form{:method => "post", :id => "#{id}", :action => "comment/#{id}"}
       %p
-        %label{:for => "comment"} Comment
-        %input{:id => "comment" , :name => "comment", :value =>"", :title =>"comment",  :type => "text"}
+        %label{:for => "comment_#{id}"} Comment
+        %input{:id => "comment_#{id}" , :name => "comment", :value =>"", :title =>"comment",  :type => "text"}
       %p{:class => "remember"}
-        %input{:id => "#{id}", :value =>"comment", :type => "submit"}
+        %input{:id => "#{id}", :value =>"comment", :type => "submit" :class => "comment_submit"}

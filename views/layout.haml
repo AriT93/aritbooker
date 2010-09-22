@@ -22,7 +22,22 @@
             $("fieldset#comment_menu").hide();
           }
         });
+       $(".comment_submit").click(function() {
+           var element = $(this);
+           var Id = element.attr("id");
+
+           $.ajax({
+              type: "POST",
+              url: "comment/"+Id,
+              data: $("#comment_"+Id).val(),
+              cache: false,
+              sucess: function(html){
+                  location.reload();
+                  }
+                });
+              return false;});
       });
+
   %body
   #header
     %img{:class => "ad", :src => "/images/masthead.gif", :alt => "Insure Barn"}
