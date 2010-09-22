@@ -102,7 +102,7 @@ end
 post '/comment/:id' do
   @fbs.post(params[:id], :type => "comments", :params =>{ :message => params[:comment]})
 #  params[:comment] + " ; " + params[:id]
-  redirect '/'
+#  redirect '/'
 end
 
 get '/css/style.css' do
