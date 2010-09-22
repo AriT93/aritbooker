@@ -26,7 +26,6 @@
               %p{:class => "true"}
                 #{com.message}
         .false
-          #{h.id}
           = partial("commentbox", :locals => {:id =>h.id})
           |
           %a{:href => "/like/#{h.id}"}
