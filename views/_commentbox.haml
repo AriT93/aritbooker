@@ -1,0 +1,11 @@
+#container
+  #topnav{:class => "topnav"}
+    %a{:href => "comment", :class =>"comment"}
+    %span Comment
+  %fieldset{:id => "comment_menu"}
+    %form{:method => "post", :id => "comment", :action => "comment"}
+      %p
+        %label{:for => "comment"} Comment
+        %input{:id => "comment" , :name => "comment", :value =>"", :title =>"comment", :tabindex => "4", :type => "text"}
+      %p{:class => "remember"}
+        %input{:id => "comment_submit", :value =>"comment", :tabindex => 6, :type => "submit"}
