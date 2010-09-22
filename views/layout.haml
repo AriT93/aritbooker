@@ -10,7 +10,6 @@
        $(".comment_button").click(function() {
            var element = $(this);
            var Id = element.attr("id");
-           alert(Id);
            $("#slidepanel_"+Id).slideToggle(300);
            $(this).toggleClass("active");
            return false;
@@ -24,10 +23,8 @@
               url: urlToPost,
               global: false,
               type: "POST",
-              data: dataString,
-              async:false,
+              data: ({comment : $("#comment_"+Id).val()}),
               sucess: function(html){
-                  alert(html);
                   $("#slidepanel_"+Id).slideToggle(300);
                   }
                 });
