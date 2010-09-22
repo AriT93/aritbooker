@@ -26,6 +26,7 @@
               data: ({comment : $("#comment_"+Id).val()}),
               success: function(html){
                   $("#slidepanel_"+Id).slideToggle(300);
+                  location.reload();
                   }
                 });
            return false;});
