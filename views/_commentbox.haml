@@ -2,5 +2,5 @@
 .panel{:id => "slidepanel_#{id}"}
   %form{:method => "post", :id => "#{id}", :action => ""}
     %label{:for => "comment_#{id}"} Comment
-    %input{:id => "comment_#{id}" , :name => "comment", :value =>"", :title =>"comment",  :type => "text"}
+    %textarea{:id => "comment_#{id}" , :name => "comment", :value =>"", :title =>"comment"}
     %input{:id => "#{id}", :value =>"comment", :type => "submit", :class => "comment_submit"}
