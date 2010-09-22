@@ -3,7 +3,7 @@
     %a{:href => "comment", :class =>"comment"}
     %span Comment
   %fieldset{:id => "comment_menu"}
-    %form{:method => "post", :id => "comment", :action => "comment/#{h.id}"}
+    %form{:method => "post", :id => "comment", :action => "comment/#{id}"}
       %p
         %label{:for => "comment"} Comment
         %input{:id => "comment" , :name => "comment", :value =>"", :title =>"comment", :tabindex => "4", :type => "text"}
