@@ -25,7 +25,6 @@
        $(".comment_submit").click(function() {
            var element = $(this);
            var Id = element.attr("id");
-
            $.ajax({
               type: "POST",
               url: "comment/"+Id,
@@ -35,9 +34,8 @@
                   location.reload();
                   }
                 });
-              return false;});
+           return false;});
       });
-
   %body
   #header
     %img{:class => "ad", :src => "/images/masthead.gif", :alt => "Insure Barn"}
