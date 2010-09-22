@@ -18,12 +18,12 @@
        $(".comment_submit").click(function() {
            var element = $(this);
            var Id = element.attr("id");
-           var url = "comment/"+Id;
-
+           var urlToPost = "comment/"+Id;
+           var dataString = 'comment=' + $("#comment_"+Id).val();
            $.ajax({
               type: "POST",
-              url: "comment/"+Id,
-              data: $("#comment_"+Id).val(),
+              url: urlToPost,
+              data: dataString,
               cache: false,
               async: false,
               sucess: function(html){
