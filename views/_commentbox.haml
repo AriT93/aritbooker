@@ -4,9 +4,9 @@
     %span Comment
   %p #{id}
   %fieldset{:id => "comment_menu"}
-    %form{:method => "post", :id => "comment_#{id}", :action => "comment/#{id}"}
+    %form{:method => "post", :id => "#{id}", :action => "comment/#{id}"}
       %p
         %label{:for => "comment"} Comment
-        %input{:id => "comment" , :name => "comment", :value =>"", :title =>"comment", :tabindex => "4", :type => "text"}
+        %input{:id => "comment" , :name => "comment", :value =>"", :title =>"comment",  :type => "text"}
       %p{:class => "remember"}
-        %input{:id => "comment_submit_#{id}", :value =>"comment", :tabindex => 6, :type => "submit"}
+        %input{:id => "#{id}", :value =>"comment", :type => "submit"}
