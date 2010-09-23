@@ -4,6 +4,10 @@
 
 libs = []
 libs << "irb/completion"
+libs << "ap"
+libs << "sinatra"
+libs << "sinatra-authentication"
+libs << "environment"
 libs << File.dirname(__FILE__) + '/../environment.rb'
 
 command_line = []
