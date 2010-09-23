@@ -1,7 +1,7 @@
 !!! Strict
 %html{:xmlns=>"http://www.w3.org/1999/xhtml", :'xmlns:fb'=>"http://www.facebook.com/2008/fbml"}
   %head
-    %title Insure Barn
+    %title AriTBooker
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/style.css'}
     %script{:type => 'text/javascript', :src => 'http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US'}
     %script{:tyupe => 'text/javascript', :src => 'js/jquery.js'}
@@ -17,7 +17,7 @@
        $(".comment_submit").click(function() {
            var element = $(this);
            var submitBtn = element.find("input[type='submit']");
-           $(submitBtn).attr("disabled", "disabled");
+           $(submitBtn).attr("disabled", true);
            var Id = element.attr("id");
            var urlToPost = "comment/"+Id;
            var dataString = 'comment=' + $("#comment_"+Id).val();
@@ -35,7 +35,6 @@
        });
   %body
   #header
-    %img{:class => "ad", :src => "/images/masthead.gif", :alt => "Insure Barn"}
     .clear
     #contentMast
       %p
