@@ -12,11 +12,13 @@
             #{h.from.name}
         .status
           .false
-            #{h.message}
-            #{h.caption}
-            #{h.description}
-            %img{:src => "#{h.picture}", :alt => "#{h.caption}"}
-            %a{:href => "#{h.link}"} #{h.name}
+            %p #{h.message}
+            %p #{h.caption}
+            %p #{h.description}
+            %p
+              %img{:src => "#{h.picture}", :alt => "#{h.caption}"}
+            %p
+              %a{:href => "#{h.link}"} #{h.name}
         .clear
         - if h.comments != nil
           - if h.comments.data != nil
