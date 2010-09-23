@@ -12,11 +12,11 @@
             #{h.from.name}
         .status
           .false
-            %p{:class =>false} #{h.message}
-            %p{:class =>false} #{h.description}
-            %p{:class =>false}
+            %p{:class => "false"} #{h.message}
+            %p{:class => "false"} #{h.description}
+            %p{:class => "false"}
               %img{:src => "#{h.picture}", :alt => "#{h.caption}"}
-            %p{:class =>false}
+            %p{:class => "false"}
               %a{:href => "#{h.link}"} #{h.name}
         .clear
         - if h.comments != nil
