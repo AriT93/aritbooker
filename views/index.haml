@@ -13,6 +13,10 @@
         .status
           .false
             #{h.message}
+            #{h.caption}
+            #{h.description}
+            %img{:src => "#{h.picture}", :alt => "#{h.caption}"}
+            %a{:href => "#{h.link}"} #{h.name}
         .clear
         - if h.comments != nil
           - if h.comments.data != nil
