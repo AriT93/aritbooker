@@ -87,7 +87,6 @@ get '/sessions/create' do
   @user = AbUser.first(:email => current_user.email)
   if @user != nil
     @user.atoken = @access_token
-    @user.name = "lbah"
     @user.save
   end
   redirect "/"
