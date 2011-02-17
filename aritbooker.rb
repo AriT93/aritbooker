@@ -107,7 +107,7 @@ post '/comment/:id' do
   true
 end
 post '/status' do
-  @fbs.post('me',:type=>:feed, :params{ :message => params[:status]})
+  @fbs.post('me', :type => :feed, :params{ :message => params[:status]})
   redirect '/'
 end
 get '/css/style.css' do
