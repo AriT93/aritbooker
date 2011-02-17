@@ -1,8 +1,8 @@
 #infoBoxes
-    %form{:method => "post", :action => "/status"}
-      %label{:for => "status"} Status
-      %textarea{:id => "status" , :name => "status", :value =>"", :title =>"status"}
-      %input{:id => "status", :value =>"status", :type => "submit", :class => "submit"}
+  %form{:method => "post", :action => "/status"}
+    %label{:for => "status"} Status
+    %textarea{:id => "status" , :name => "status", :value =>"", :title =>"status"}
+    %input{:id => "status", :value =>"status", :type => "submit", :class => "submit"}
   - @fbs.me.home.data.each do |h|
     - if h[:type] != "blabber"
       .statusBox
